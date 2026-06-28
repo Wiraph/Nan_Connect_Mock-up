@@ -24,12 +24,22 @@ export default function BottomNav() {
           <Link
             key={it.href}
             href={it.href}
-            className={`flex flex-col items-center gap-0.5 py-2 text-[11px] transition ${
-              active ? "text-navy" : "text-muted"
-            }`}
+            aria-current={active ? "page" : undefined}
+            className="relative flex flex-col items-center gap-0.5 pb-1.5 pt-2 text-[11px] transition"
           >
-            <i className={`ti ${it.icon} text-xl`} aria-hidden />
-            <span>{t(it.key)}</span>
+            {active && (
+              <span className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-gold" />
+            )}
+            <span
+              className={`flex h-8 w-8 items-center justify-center rounded-full transition duration-200 ${
+                active ? "scale-110 bg-gold/15 text-navy" : "text-muted"
+              }`}
+            >
+              <i className={`ti ${it.icon} text-xl`} aria-hidden />
+            </span>
+            <span className={active ? "font-medium text-navy" : "text-muted"}>
+              {t(it.key)}
+            </span>
           </Link>
         );
       })}

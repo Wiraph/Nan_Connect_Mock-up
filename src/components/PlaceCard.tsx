@@ -15,7 +15,7 @@ export default function PlaceCard({ place }: { place: Place }) {
   return (
     <Link
       href={`/place/${place.id}`}
-      className="group flex overflow-hidden rounded-xl border border-line bg-white transition hover:border-navy-300"
+      className="hover-lift group flex overflow-hidden rounded-xl border border-line bg-white hover:border-navy-300"
     >
       <div className="relative w-28 shrink-0 self-stretch overflow-hidden">
         <PlaceIllustration

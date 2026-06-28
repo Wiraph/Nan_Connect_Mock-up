@@ -22,7 +22,7 @@ export default function Home() {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push(`/chat${query ? `?q=${encodeURIComponent(query)}` : ""}`);
+    router.push(`/search${query ? `?q=${encodeURIComponent(query)}` : ""}`);
   };
 
   const heroText = (th: string, en: string) => (lang === "th" ? th : textLoc(en, lang));
@@ -36,7 +36,7 @@ export default function Home() {
         <section className="relative overflow-hidden bg-navy text-cream">
           <div className="lanna-watermark pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden />
           <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-7 pt-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-12">
-            <div className="max-w-3xl">
+            <div className="anim-rise max-w-3xl">
               <h1 className="font-lanna text-2xl leading-snug lg:text-5xl">
                 {t("home.hero.title")}
               </h1>
@@ -168,12 +168,12 @@ export default function Home() {
         {/* Categories */}
         <section className="mx-auto w-full max-w-7xl px-4 pt-5 lg:px-8 lg:pt-8">
           <SectionTitle>{t("home.categories")}</SectionTitle>
-          <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-7 lg:gap-3">
+          <div className="stagger mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-7 lg:gap-3">
             {categories.map((c) => (
               <Link
                 key={c.key}
                 href={`/category/${c.key}`}
-                className="flex min-h-20 flex-col items-center justify-center gap-1.5 rounded-xl border border-line bg-white py-3 text-center transition hover:border-navy-300 lg:min-h-24"
+                className="hover-lift flex min-h-20 flex-col items-center justify-center gap-1.5 rounded-xl border border-line bg-white py-3 text-center hover:border-navy-300 lg:min-h-24"
               >
                 <i className={`ti ${c.icon} text-2xl text-navy`} aria-hidden />
                 <span className="px-1 text-[11px] leading-tight text-ink lg:text-xs">{loc(c.name, lang)}</span>
@@ -204,7 +204,7 @@ export default function Home() {
         {/* Featured */}
         <section className="mx-auto w-full max-w-7xl px-4 pb-8 pt-5 lg:px-8 lg:pt-8">
           <SectionTitle>{t("home.featured")}</SectionTitle>
-          <div className="mt-3 grid gap-3 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="stagger mt-3 grid gap-3 lg:grid-cols-2 xl:grid-cols-3">
             {featured.map((p) => (
               <PlaceCard key={p.id} place={p} />
             ))}

@@ -13,7 +13,7 @@ export default function KpiCard({
 }) {
   return (
     <div
-      className={`rounded-2xl border p-4 ${
+      className={`hover-lift anim-rise rounded-2xl border p-4 ${
         accent ? "border-gold bg-navy text-cream" : "border-line bg-white"
       }`}
     >

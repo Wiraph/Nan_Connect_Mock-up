@@ -72,6 +72,97 @@ body {
   scrollbar-width: none;
 }
 
+/* ---------- Animations ---------- */
+@keyframes nc-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes nc-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes nc-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes nc-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.anim-rise {
+  animation: nc-rise 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.anim-pop {
+  animation: nc-pop 0.32s ease both;
+}
+.anim-slide-up {
+  animation: nc-slide-up 0.34s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.anim-fade {
+  animation: nc-fade 0.5s ease both;
+}
+
+/* Staggered entrance for direct children of a list/grid */
+.stagger > * {
+  animation: nc-rise 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.stagger > *:nth-child(1) { animation-delay: 0.02s; }
+.stagger > *:nth-child(2) { animation-delay: 0.06s; }
+.stagger > *:nth-child(3) { animation-delay: 0.1s; }
+.stagger > *:nth-child(4) { animation-delay: 0.14s; }
+.stagger > *:nth-child(5) { animation-delay: 0.18s; }
+.stagger > *:nth-child(6) { animation-delay: 0.22s; }
+.stagger > *:nth-child(7) { animation-delay: 0.26s; }
+.stagger > *:nth-child(8) { animation-delay: 0.3s; }
+.stagger > *:nth-child(9) { animation-delay: 0.34s; }
+.stagger > *:nth-child(n + 10) { animation-delay: 0.38s; }
+
+/* Lift on hover for cards/tiles */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(27, 42, 74, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-rise,
+  .anim-pop,
+  .anim-slide-up,
+  .anim-fade,
+  .stagger > * {
+    animation: none !important;
+  }
+  .hover-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 /* Branded backdrop behind the mobile app frame on large screens */
 .tourist-bg {
   background-color: var(--color-cream);

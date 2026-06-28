@@ -28,7 +28,7 @@ export default function LangSwitcher({ dark = false }: { dark?: boolean }) {
       {open && (
         <>
           <div className="fixed inset-0 z-30" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 z-40 mt-2 w-44 overflow-hidden rounded-xl border border-line bg-white py-1 shadow-lg">
+          <div className="anim-pop absolute right-0 z-40 mt-2 w-44 origin-top overflow-hidden rounded-xl border border-line bg-white py-1 shadow-lg">
             {languages.map((l) => (
               <button
                 key={l.code}

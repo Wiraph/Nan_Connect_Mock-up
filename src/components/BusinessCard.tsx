@@ -12,7 +12,7 @@ export default function BusinessCard({ biz }: { biz: Business }) {
   return (
     <Link
       href={`/biz/${biz.id}`}
-      className="flex items-center gap-3 rounded-xl border border-line bg-white p-3 transition hover:border-navy-300"
+      className="hover-lift flex items-center gap-3 rounded-xl border border-line bg-white p-3 hover:border-navy-300"
     >
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-cream-200">
         <i className={`ti ${cat?.icon ?? "ti-map-pin"} text-xl text-navy`} aria-hidden />

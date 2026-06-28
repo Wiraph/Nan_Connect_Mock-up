@@ -68,7 +68,7 @@ function ChatInner() {
 
           {messages.map((m, i) =>
             m.from === "user" ? (
-              <div key={i} className="flex justify-end">
+              <div key={i} className="anim-rise flex justify-end">
                 <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-navy px-3.5 py-2 text-sm text-cream">
                   {m.text}
                 </div>
@@ -150,7 +150,7 @@ function ChatInner() {
 
 function AiBubble({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-2">
+    <div className="anim-rise flex items-start gap-2">
       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy">
         <i className="ti ti-robot text-base text-gold" aria-hidden />
       </div>
