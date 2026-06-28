@@ -1,0 +1,17 @@
+[
+  { "key": "mueang", "name": { "th": "เมืองน่าน", "en": "Mueang Nan" }, "scans": 4820, "x": 52, "y": 58 },
+  { "key": "phu-phiang", "name": { "th": "ภูเพียง", "en": "Phu Phiang" }, "scans": 1610, "x": 58, "y": 60 },
+  { "key": "pua", "name": { "th": "ปัว", "en": "Pua" }, "scans": 3240, "x": 60, "y": 33 },
+  { "key": "tha-wang-pha", "name": { "th": "ท่าวังผา", "en": "Tha Wang Pha" }, "scans": 1980, "x": 50, "y": 40 },
+  { "key": "bo-kluea", "name": { "th": "บ่อเกลือ", "en": "Bo Kluea" }, "scans": 2510, "x": 74, "y": 36 },
+  { "key": "wiang-sa", "name": { "th": "เวียงสา", "en": "Wiang Sa" }, "scans": 1340, "x": 40, "y": 70 },
+  { "key": "na-noi", "name": { "th": "นาน้อย", "en": "Na Noi" }, "scans": 1720, "x": 38, "y": 82 },
+  { "key": "na-muen", "name": { "th": "นาหมื่น", "en": "Na Muen" }, "scans": 560, "x": 44, "y": 90 },
+  { "key": "mae-charim", "name": { "th": "แม่จริม", "en": "Mae Charim" }, "scans": 680, "x": 64, "y": 66 },
+  { "key": "ban-luang", "name": { "th": "บ้านหลวง", "en": "Ban Luang" }, "scans": 430, "x": 36, "y": 54 },
+  { "key": "thung-chang", "name": { "th": "ทุ่งช้าง", "en": "Thung Chang" }, "scans": 760, "x": 58, "y": 18 },
+  { "key": "chiang-klang", "name": { "th": "เชียงกลาง", "en": "Chiang Klang" }, "scans": 690, "x": 54, "y": 26 },
+  { "key": "santi-suk", "name": { "th": "สันติสุข", "en": "Santi Suk" }, "scans": 520, "x": 66, "y": 56 },
+  { "key": "song-khwae", "name": { "th": "สองแคว", "en": "Song Khwae" }, "scans": 410, "x": 46, "y": 30 },
+  { "key": "chaloem", "name": { "th": "เฉลิมพระเกียรติ", "en": "Chaloem Phra Kiat" }, "scans": 900, "x": 66, "y": 14 }
+]

@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1b2a4a;
+  --color-navy-600: #26395f;
+  --color-navy-300: #5a6b8c;
+  --color-gold: #c9a227;
+  --color-gold-700: #7a5a0b;
+  --color-cream: #f5f1e6;
+  --color-cream-200: #e9e2cd;
+  --color-ink: #33302a;
+  --color-muted: #6b6655;
+  --color-line: #d8d0b8;
+
+  --font-sans: var(--font-noto-thai), system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Decorative Nan woven-textile strip */
+.weave-strip {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-navy) 0 10px,
+    var(--color-gold) 10px 20px
+  );
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Branded backdrop behind the mobile app frame on large screens */
+.tourist-bg {
+  background-color: var(--color-cream);
+}
+@media (min-width: 1024px) {
+  .tourist-bg {
+    background-color: #101a30;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(201, 162, 39, 0.07) 0 2px,
+      transparent 2px 16px
+    );
+  }
+}

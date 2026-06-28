@@ -1,0 +1,29 @@
+{
+  "kpi": {
+    "scansPerYear": 20000,
+    "satisfaction": 87,
+    "stores": 312,
+    "incomePerHousehold": 1500,
+    "avgRating": 4.8
+  },
+  "intent": [
+    { "key": "craft", "value": 40, "tint": "#1b2a4a", "label": { "th": "งานคราฟ / วัฒนธรรม", "en": "Crafts & culture" } },
+    { "key": "events", "value": 20, "tint": "#c9a227", "label": { "th": "อีเวนต์ / เทศกาล", "en": "Local events" } },
+    { "key": "dining", "value": 20, "tint": "#d85a30", "label": { "th": "ร้านอาหาร", "en": "Dining" } },
+    { "key": "transport", "value": 15, "tint": "#1d9e75", "label": { "th": "การเดินทาง", "en": "Transport" } },
+    { "key": "other", "value": 5, "tint": "#888780", "label": { "th": "อื่น ๆ", "en": "Other" } }
+  ],
+  "ratingDistribution": [
+    { "stars": 5, "pct": 75 },
+    { "stars": 4, "pct": 15 },
+    { "stars": 3, "pct": 5 },
+    { "stars": 2, "pct": 3 },
+    { "stars": 1, "pct": 2 }
+  ],
+  "recentReviews": [
+    { "place": { "th": "วัดภูมินทร์", "en": "Wat Phumin" }, "stars": 5, "lang": "en", "text": { "th": "งานจิตรกรรมสวยมาก AI เล่าเรื่องได้ดี", "en": "Stunning murals, the AI guide told the story beautifully." } },
+    { "place": { "th": "บ่อเกลือสินเธาว์ภูเขา", "en": "Bo Kluea Salt Wells" }, "stars": 5, "lang": "zh", "text": { "th": "ได้เห็นภูมิปัญญาการต้มเกลือ ประทับใจ", "en": "Loved seeing the traditional salt-boiling craft." } },
+    { "place": { "th": "ดอยเสมอดาว", "en": "Doi Samer Dao" }, "stars": 4, "lang": "th", "text": { "th": "ทะเลหมอกสวย แต่ทางขึ้นคดเคี้ยว", "en": "Beautiful mist, though the road is winding." } },
+    { "place": { "th": "ลำดวนผ้าทอ", "en": "Lamduan Weaving" }, "stars": 5, "lang": "ja", "text": { "th": "ลองทอผ้าเองสนุกมาก", "en": "Trying the weaving myself was so much fun." } }
+  ]
+}

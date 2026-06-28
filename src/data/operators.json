@@ -1,0 +1,932 @@
+[
+  {
+    "id": "op-1",
+    "name": "KM4",
+    "category": "accommodation",
+    "contact": "ธัญญานันท์ อักขระ",
+    "phone": "092-6954553",
+    "address": "122 หมู่2 ตำบลดงพญา อำเภอบ่อเกลือ จังหวัดน่าน",
+    "facebook": "KM4Camp ห้วยโทน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-2",
+    "name": "Mulberry Camp",
+    "category": "accommodation",
+    "contact": "นาย มณเฑียร เทพนรรัตน์",
+    "phone": "081-932 9328",
+    "address": "417 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Mulberry Camp",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-3",
+    "name": "Sapa at Sapan",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "SAPA at sapan",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-4",
+    "name": "Sapan Goodview",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "082-613-9823",
+    "address": "433 บ้านเด่น หมู่1 ตำบล ดงพญา อำเภอ บ่อเกลือ น่าน",
+    "facebook": "Sapan Goodview",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-5",
+    "name": "Sapan Little Home",
+    "category": "accommodation",
+    "contact": "นางสาววรินดา เพ็ชรทองนะ",
+    "phone": "061-681 2714",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Sapan Little Home สะปันลิตเติ้ลโฮม",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-6",
+    "name": "Sapan River Clamp",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "083 046 7746",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สะปัน Riva camp",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-7",
+    "name": "The Proud Resort Sapan",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "The Proud Resort Riverside cafe สะปัน น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-8",
+    "name": "The sapan Resort",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-9",
+    "name": "กระซิบหมอกแอดสะปัน",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "089-4102157",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "กระซิบหมอกแอทสะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-10",
+    "name": "ขุนเขาธารา",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "0928912088",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ขุนเขาธารา",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-11",
+    "name": "ครัวพลับพลึง",
+    "category": "accommodation",
+    "contact": "คุณชลิตา  บริคุต",
+    "phone": "097-3322068",
+    "address": "244 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ครัวพลับพลึง Krua Plubplung",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-12",
+    "name": "คาซ่าย่าทิพย์",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "087-681-6222",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-13",
+    "name": "คีรีวารี",
+    "category": "accommodation",
+    "contact": "คุณพรพระพาย​ พรพันพิพัฒน์",
+    "phone": "064-115 8902",
+    "address": "358 ต.ดงพญา​ อ.บ่อเกลือ​ จ.น่าน​",
+    "facebook": "Kiri Vari คีรี วารี",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-14",
+    "name": "เคียงสะปัน",
+    "category": "accommodation",
+    "contact": "คุณพิมลพรรณ พิลา\nนายอัษฎาวุธ ดลจิตต์",
+    "phone": "096 930 8964",
+    "address": "453 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-15",
+    "name": "ชมดอยบ้านสวนโฮมสเตย์",
+    "category": "accommodation",
+    "contact": "นายจำลอง  อินสุด",
+    "phone": "882538822",
+    "address": "395/1บ้านสะปัน ตำดงพญา อำเภอบ่อเกลือ จังหวัดน่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-16",
+    "name": "ซีเคร็ท การ์เด้น บ้านสะปัน",
+    "category": "accommodation",
+    "contact": "นายครองราชลาภ มังกรกนกวัฒน์",
+    "phone": "833249395",
+    "address": "371 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ซีเคร็ท การ์เด้น บ้านสะปัน บ่อเกลือ น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-17",
+    "name": "ณ สะปันแคมป์ปิ้ง",
+    "category": "accommodation",
+    "contact": "คุณรณกฤต  เกิดวิธิต",
+    "phone": "088-6022811",
+    "address": "47 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ณ สะปัน แคมป์ปิ้ง Na Saphan Camping",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-18",
+    "name": "ดวงดี แอด สะปัน",
+    "category": "accommodation",
+    "contact": "คุณดิเรก สุรินทร์",
+    "phone": "082-6139823",
+    "address": "433 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-19",
+    "name": "ดอยหมอกดาว ลานกางเต้นท์",
+    "category": "accommodation",
+    "contact": "คุณแววดาว  ใจปิง",
+    "phone": "096-689 3221",
+    "address": "170 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-20",
+    "name": "ดอยอิงดาว @ ดงพญา",
+    "category": "accommodation",
+    "contact": "คุณวิชชากร เชื้อหมอ",
+    "phone": "085-8193618",
+    "address": "360 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ดอยอิงดาวatดงพญา",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-21",
+    "name": "เดอะ สะปันออนเซ็น",
+    "category": "accommodation",
+    "contact": "น.ส ฉันทพิชญา อัครวิทย์เดชากุล",
+    "phone": "064-479 9926",
+    "address": "457 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "The sapan onsen เดอะ สะปันออนเซ็น",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-22",
+    "name": "เดอะกรีน เมาท์เทิน",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "065 455 0966",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "The Green Mountain - เดอะ กรีน เมาท์เทิน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-23",
+    "name": "เดอะสะปันฟอเรส",
+    "category": "accommodation",
+    "contact": "น.ส.จันจิรา เสืออย่าง",
+    "phone": "080-511-6509",
+    "address": "434 หมู่1 ต.ดงพญา อ.บ่อเกลือ น่าน",
+    "facebook": "The Sapan Forest เดอะ สะปัน ฟอเรส",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-24",
+    "name": "ต่อเวลา ณ สะปัน",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "080-9351750",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Tor'Vela at Sapan ต่อ-เว-ลา ณ สะปัน1.4 /Tor’Vela at Sapan ต่อ-เว-ลา ณ สะปัน2.1",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-25",
+    "name": "ตาเสาร์โฮมสเตย์",
+    "category": "accommodation",
+    "contact": "คุณนิชาภัทร ชุมมินทร์",
+    "phone": "979281906",
+    "address": "226หมู่ 1 ต .ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ตาเสาร์โฮมสเตย์ บ้านสะปัน อ.บ่อเกลือ จ.น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-26",
+    "name": "เติม เต็ม สุข",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "เติม เต็ม สุข",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-27",
+    "name": "แตะขอบฟ้า",
+    "category": "accommodation",
+    "contact": "นาย ขจร  ภูพาน",
+    "phone": "081 3264691",
+    "address": "241หมู่ 1 บ้านเด่น ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "แตะขอบฟ้า สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-28",
+    "name": "ท่ามกลางสะปัน",
+    "category": "accommodation",
+    "contact": "คุณศิริพร อ่อนหวาน",
+    "phone": "095-5380735",
+    "address": "405 หมู่1 ต.ดงพญา อ.บ่อเกลือ จังหวัดน่าน",
+    "facebook": "ท่ามกลางสะปัน Times Klang sapan",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-29",
+    "name": "ไทรวารี",
+    "category": "accommodation",
+    "contact": "คุณไพรัช สิมะวรา",
+    "phone": "085-948-4708",
+    "address": "354 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ไทรวารี ฟาร์มสเตย์ ที่พักสะปัน , บ่อเกลือ จ.น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-30",
+    "name": "ธรรมชาติ บ้านห้วยหมี",
+    "category": "accommodation",
+    "contact": "คุณสุคนธ์ กล่ำกลาง",
+    "phone": "086-880 3390",
+    "address": "102 ม.6 บ้านห้วยหมี ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ธรรมชาติ บ้านห้วยหมี - สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-31",
+    "name": "นกขมิ้นชมหมอก",
+    "category": "accommodation",
+    "contact": "คุณสหรัฐ กั้วนามน",
+    "phone": "093-230-2446",
+    "address": "428 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "นกขมิ้น ชมหมอก สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-32",
+    "name": "นาเขา เราสะปัน",
+    "category": "accommodation",
+    "contact": "สาวิตา กุ้ยรักษา",
+    "phone": "918891660",
+    "address": "470 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "นา เขา เรา สะปัน Na Khao Rao Sapa",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-33",
+    "name": "นาเขาบ้านเรา บูทีคโฮมสเตย์@สะปัน",
+    "category": "accommodation",
+    "contact": "พชรวัจน์ ถ้ำแก้ว",
+    "phone": "099-285-4652",
+    "address": "461 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-34",
+    "name": "น่านฟ้าสะปัน",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "064-2304147",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "น่านฟ้า สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-35",
+    "name": "เนเจอร์ เดอ สะปัน",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "เนเจอร์ เดอ สะปัน /Nature De Sapan",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-36",
+    "name": "บอกฮักบ้านสะปัน",
+    "category": "accommodation",
+    "contact": "คุณธนากร  กิจคณะบวร",
+    "phone": "096-4164262",
+    "address": "429 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "บอกฮักบ้านสะปัน ที่พักสะปัน น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-37",
+    "name": "บ้านความทรงจำ",
+    "category": "accommodation",
+    "contact": "น.ส. ฉันทพิชญา อัครวิทย์เดชากุล",
+    "phone": "096-404-9604",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "บ้านความทรงจำ สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-38",
+    "name": "บ้านฉันรักเขา",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ฉันรักเขาน่าน /\nบ้านฉันรักเขาโฮมสเตย์ สะปันน่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-39",
+    "name": "บ้านธารหมอก",
+    "category": "accommodation",
+    "contact": "คุณสุรเดช  ซีมเมฆ\nน.ส.วิจิตรา มะลิ",
+    "phone": "095-914 5244",
+    "address": "401 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Baantarnmork บ้านธารหมอก At สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-40",
+    "name": "บ้านปันสุข",
+    "category": "accommodation",
+    "contact": "นางดวงใจ นารินทร์\nนายจิรศักดิ์ นารินทร์",
+    "phone": "085-0214108",
+    "address": "463 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "บ้านปันสุข สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-41",
+    "name": "บ้านมีดาว โฮมสเตย์",
+    "category": "accommodation",
+    "contact": "นางกัลยา ใจปิง",
+    "phone": "095-907-1585",
+    "address": "400 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "บ้านมีดาว โฮมสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-42",
+    "name": "บ้านสะปัน ลานนา",
+    "category": "accommodation",
+    "contact": "คุณณัฐชยา ณัฏฐาปัญญาวัฒณ์",
+    "phone": "064-5925993",
+    "address": "28 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "บ้านสะปันลานนา ที่มีพิซซ่าเตาถ่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-43",
+    "name": "บ้านสะปันเทอเรส",
+    "category": "accommodation",
+    "contact": "คุณอุษามณี  จินดาเรือง",
+    "phone": "983354213",
+    "address": "399 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "บ้านสะปัน เทอเรส",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-44",
+    "name": "บ้านห่มหมอกสะปัน",
+    "category": "accommodation",
+    "contact": "นาง พรรณี ภูพาน\nนายจำเริญ  ภูพาน",
+    "phone": "061-2682257",
+    "address": "422 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ห่มหมอกสะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-45",
+    "name": "บ้านแห่งความสุข",
+    "category": "accommodation",
+    "contact": "นายเดชบดินทร์ บุญแรง(ฟลุ๊ค)\nน.ส.ปุณจลีย์ บุญแรง(โอ๋)",
+    "phone": "063-1288462",
+    "address": "92 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สะปัน น่าน บ้านแห่งความสุข",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-46",
+    "name": "ปลายนาโฮมสเตย์",
+    "category": "accommodation",
+    "contact": "คุณสุกันยา มูลชมภู",
+    "phone": "093-285-0272",
+    "address": "296หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน 55220",
+    "facebook": "ปลายนาโฮมสเตย์ ที่พักสะปัน บ่อเกลือ น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-47",
+    "name": "ป๊ะกั๋นแคมป์ปิ้งฮิลล์",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "098-326-6788",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ป๊ะกั๋นแคมป์ปิ้งฮิลล์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-48",
+    "name": "ภูนาสะปัน",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ภูนา สะปันโฮมสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-49",
+    "name": "ภูพญาโฮมสเตย์",
+    "category": "accommodation",
+    "contact": "คุณเมธวัฒน์ พุทธิธาดากุล",
+    "phone": "061 349 8766",
+    "address": "279 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ภูพญาโฮมสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-50",
+    "name": "ภูว่านวิว ลานกางเต้นท์",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-51",
+    "name": "มองฟ้า สะปัน",
+    "category": "accommodation",
+    "contact": "คุณกรกฤต  รุ่งกิจวัฒนากุล",
+    "phone": "093-446 9644",
+    "address": "384 ม.1​ ต.ดงพญา อ.บ่อเกลือ​ จ.น่าน",
+    "facebook": "มองฟ้า สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-52",
+    "name": "มองว้า ยายทาตาสม ฟาร์มสเตย์",
+    "category": "accommodation",
+    "contact": "คุณสงกรานต์ เขื่อนเมือง",
+    "phone": "095 869 4340",
+    "address": "479 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "มองว้า ยายทาตาสม ฟาร์มสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-53",
+    "name": "มองวิว สะปัน",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "061 716 3366",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "มองวิว สะปัน รีสอร์ท Mongview Sapan Resort",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-54",
+    "name": "มีสะปัน",
+    "category": "accommodation",
+    "contact": "คุณสุจิตรา  สุนทร",
+    "phone": "064-652-1490",
+    "address": "357 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "มีสะปัน บ่อเกลือ น่าน At Mee Sapan",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-55",
+    "name": "แม่บัวแก้วโฮมเสตย์",
+    "category": "accommodation",
+    "contact": "คุณบัวแก้ว  ชาวยอง",
+    "phone": "063 787 7750",
+    "address": "48 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "แม่บัวแก้วโฮมสเตย์ บ้านสะปัน อ.บ่อเกลือ จ.น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-56",
+    "name": "รถบัคกี้",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Sapan Buggy Adventure บ้านสะปัน น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-57",
+    "name": "ระเบียงว้า",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ระเบียงว้า",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-58",
+    "name": "ร้านอาหารครูผึ้ง",
+    "category": "accommodation",
+    "contact": "คุณเสน่ห์  นันธิสิงห์",
+    "phone": "089-554-7035",
+    "address": "43 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ร้านครูผึ้ง บ้านสะปัน บ่อเกลือ น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-59",
+    "name": "ร้านอาหารสะปันกลางนา",
+    "category": "accommodation",
+    "contact": "คุณไปรยา  จันติ๊บ",
+    "phone": "065-497-1464",
+    "address": "390 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ร้านอาหารสะปันกลางนา อ.บ่อเกลือ จ.น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-60",
+    "name": "ริมแก่งสะปัน",
+    "category": "accommodation",
+    "contact": "นางสาวกุลจิรา จิตอารี",
+    "phone": "091-629 1941",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ริมแก่งสะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-61",
+    "name": "บ้านดินภูปันสุข",
+    "category": "accommodation",
+    "contact": "นิติกล ศรีเกิด",
+    "phone": "080-2095740",
+    "address": "404 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ลานกางเต็นท์ภูปันสุขและบ้านดิน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-62",
+    "name": "เลาะละเละ",
+    "category": "accommodation",
+    "contact": "คุณวชิระ ส้มทอง",
+    "phone": "935452279",
+    "address": "31 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-63",
+    "name": "แลเขากลางดอย",
+    "category": "accommodation",
+    "contact": "ณัฐภพ  การิยศ",
+    "phone": "095-582-8186",
+    "address": "147 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "ลานกางเต็นท์ แลเขากลางดอย ณ สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-64",
+    "name": "วิวว้าสะปัน",
+    "category": "accommodation",
+    "contact": "นาย นฤปนาท อินสุด",
+    "phone": "083-321 2919",
+    "address": "412หมู่1ตำบลดงพญา อำเภอบ่อเกลือ จังหวัดน่าน",
+    "facebook": "วิวว้า สะปัน โฮมสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-65",
+    "name": "สองเมืองแคมป์ปิ้ง",
+    "category": "accommodation",
+    "contact": "คุณมธุรศ  มะโน",
+    "phone": "084-373-9012",
+    "address": "57หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สองเมืองแคมป์ปิ้ง อ.บ่อเกลือ จ.น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-66",
+    "name": "สะปันคีรีแคมป์",
+    "category": "accommodation",
+    "contact": "กรรณิการ์ สางสี",
+    "phone": "063-739 3210",
+    "address": "370 หมู่1 ต.ดงพญา อ.บ่อเกลือ น่าน",
+    "facebook": "Sapan kiree camp : สะปัน คีรี แคมป์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-67",
+    "name": "สะปันซีวิว",
+    "category": "accommodation",
+    "contact": "คุณเอกวิทย์ แวงวรรณ",
+    "phone": "091 959 5642",
+    "address": "427หมู่1 ต.ดงพญา อ.บ่อเกลือ น่าน",
+    "facebook": "สะปันซีวิว ที่พักบ้านสะปัน บ่อเกลือ น่าน Sapan See View",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-68",
+    "name": "สะปันดาว รีสอร์ท",
+    "category": "accommodation",
+    "contact": "คุณนพดล  เบิกบาน",
+    "phone": "095-4453516",
+    "address": "389 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สะปันดาว รีสอร์ท",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-69",
+    "name": "สะปันดีวิว",
+    "category": "accommodation",
+    "contact": "คุณธนัชชา เนียมศิริ",
+    "phone": "093-0097134",
+    "address": "408 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Sapan Dee View - ที่พักสะปัน บ่อเกลือ น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-70",
+    "name": "สะปันบนวิว",
+    "category": "accommodation",
+    "contact": "นาง สมอญ เจริญวงค์",
+    "phone": "064-1583092",
+    "address": "261 หมู่1 ตำบลดงพญา อำเภอบ่อเกลือ จังหวัดน่าน",
+    "facebook": "สะปัน บนวิว โฮมสเตย์ /สะปันบนวิว",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-71",
+    "name": "สะปันบ้านนา",
+    "category": "accommodation",
+    "contact": "คุณกรกมล ใจปิง",
+    "phone": "967322314",
+    "address": "436 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สะปันบ้านนา โฮมสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-72",
+    "name": "สะปันเมาเทนช์",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-73",
+    "name": "สะปันเมาเทนซี",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "083-8197716",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Sapan mountain see",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-74",
+    "name": "สะปันยูเก็น",
+    "category": "accommodation",
+    "contact": "คุณกชกร รัตนมา",
+    "phone": "081--9159925",
+    "address": "456 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Sapan Yugen サ パ ン 幽 玄",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-75",
+    "name": "สะปันรีทรีส",
+    "category": "accommodation",
+    "contact": "คุณสุภาวิดา  สิทธิมมงคล",
+    "phone": "098-333 5415",
+    "address": "419 ม.1ต.ดงพญา อ.บ่อเกลือจ.น่าน",
+    "facebook": "บ้านสะปันretreat",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-76",
+    "name": "สะปันไลท์",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สะปันไลฟ์ - Sapan Life",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-77",
+    "name": "สะปันวิว",
+    "category": "accommodation",
+    "contact": "คุณวชิระ ส้มทอง",
+    "phone": "935452279",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-78",
+    "name": "สะปันสุข",
+    "category": "accommodation",
+    "contact": "นายปัณฑวัสส์ บุตรเลิศ",
+    "phone": "087-513 9697",
+    "address": "431 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สะปันสุข SapanSuk",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-79",
+    "name": "สะปันอันซีน",
+    "category": "accommodation",
+    "contact": "คุณพัณณภัสส์ ศรจิตร์",
+    "phone": "095-779-7971",
+    "address": "435 หมู่1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สะปันอันซีน - Sapan Unseen",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-80",
+    "name": "สะปันอิงว้า",
+    "category": "accommodation",
+    "contact": "นาย สาธิต อินสุด",
+    "phone": "097-9548859",
+    "address": "413หมู่1 ตำบลดงพญา อำเภอบ่อเกลือ จังหวัดน่าน",
+    "facebook": "สะปันอิงว้า โฮมสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-81",
+    "name": "สะปันฮิลล์",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "06-3769-6984",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "Sapan Hill - สะปัน ฮิลล์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-82",
+    "name": "สายหมอกบอกรัก",
+    "category": "accommodation",
+    "contact": "คุณสาลี  แปงยะ",
+    "phone": "092-846-5829",
+    "address": "351 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สายหมอกบอกรัก ที่พักบ้านสะปัน อ.บ่อเกลือ จ.น่าน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-83",
+    "name": "ห่มหมอกวิว",
+    "category": "accommodation",
+    "contact": "น.ส. นัฟทาลี ภูพาน\n นาย นาธาน ภูพาน",
+    "phone": "082-1648196",
+    "address": "อยู่ระหว่างดำเนินการขอบ้านเลขที่",
+    "facebook": "ห่มหมอกวิว",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-84",
+    "name": "หมอกธารฟ้า ภูนาดาว",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "061-536 5466",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "หมอกธารฟ้าภูนาดาว ฟาร์มสเตย์แอนด์แกลมปิ้ง",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-85",
+    "name": "หยุดเวลาคาเฟ่",
+    "category": "accommodation",
+    "contact": "คุณณัชชาวดี  ปันจา",
+    "phone": "097-986 2506",
+    "address": "40ม.1ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "หยุดเวลา คาเฟ่",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-86",
+    "name": "อิงไอหมอก สะปัน",
+    "category": "accommodation",
+    "contact": "คุณถิร ทองเรียง",
+    "phone": "094-5569914",
+    "address": "423 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "อิงไอหมอก ที่พักสะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-87",
+    "name": "อินเนอร์ ยัวร์ ไมน์ แอด สะปัน",
+    "category": "accommodation",
+    "contact": "",
+    "phone": "",
+    "address": "ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "อินเนอร์ ยัวร์ ไมน์ สะปัน",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-88",
+    "name": "อุ่นไอมาง",
+    "category": "accommodation",
+    "contact": "คุณพรชัย  ยอดออน",
+    "phone": "062-645-4666",
+    "address": "410 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "อุ่นไอมาง 𝐎𝐮𝐧 𝐈 𝐌𝐚𝐧𝐠",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-89",
+    "name": "เฮือนฮิมน้ำ",
+    "category": "accommodation",
+    "contact": "คุณชมภูนุช อินสุด",
+    "phone": "095-6921902",
+    "address": "42 หมู่ 1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "เฮือนฮิมน้ำ สะปันโฮมสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-90",
+    "name": "สะปันRiva Camp",
+    "category": "accommodation",
+    "contact": "คุณนัทวัส ถุงเสน",
+    "phone": "090-268 1975",
+    "address": "25 หมู่1 ต.ดงพญา อ.บ่อเกลือ น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-91",
+    "name": "อ้อมกอดบ้านสะปัน",
+    "category": "accommodation",
+    "contact": "คุณรตนพร กิจคณะบวร",
+    "phone": "061-956 9195",
+    "address": "492 หมู่1 ต.ดงพญา อ.บ่อเกลือ น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-92",
+    "name": "สะพานสะปันโฮมสเตย์",
+    "category": "accommodation",
+    "contact": "คุณศิริรัตน์ ใจปิง",
+    "phone": "06-5605-9049",
+    "address": "220 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "สะพานสะปันโฮมสเตย์",
+    "district": "อ.บ่อเกลือ"
+  },
+  {
+    "id": "op-93",
+    "name": "ลานกางเต็นท์สะปันวัลเล่ย์\nแคมป์ปิ้ง",
+    "category": "accommodation",
+    "contact": "คุณธนัญภรณ์  เกิดผล",
+    "phone": "094-197 4478",
+    "address": "481 ม.1 ต.ดงพญา อ.บ่อเกลือ จ.น่าน",
+    "facebook": "",
+    "district": "อ.บ่อเกลือ"
+  }
+]

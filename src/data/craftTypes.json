@@ -1,0 +1,12 @@
+[
+  { "key": "wickerwork", "icon": "ti-basket", "name": { "th": "เครื่องจักสาน", "en": "Wickerwork" } },
+  { "key": "weaving", "icon": "ti-needle", "name": { "th": "ผ้าทอ", "en": "Hand weaving" } },
+  { "key": "bamboo", "icon": "ti-plant", "name": { "th": "ไผ่", "en": "Bamboo craft" } },
+  { "key": "mural", "icon": "ti-brush", "name": { "th": "จิตรกรรมฝาผนัง", "en": "Mural painting" } },
+  { "key": "pottery", "icon": "ti-bowl", "name": { "th": "ปูนปั้นและเครื่องปั้น", "en": "Pottery & stucco" } },
+  { "key": "silver", "icon": "ti-diamond", "name": { "th": "เครื่องเงิน", "en": "Silverware" } },
+  { "key": "wellness", "icon": "ti-flower", "name": { "th": "สปาและสุขภาพ", "en": "Spa & wellness" } },
+  { "key": "nature", "icon": "ti-mountain", "name": { "th": "ธรรมชาติ", "en": "Nature" } },
+  { "key": "culture", "icon": "ti-building-monument", "name": { "th": "วัฒนธรรมและประวัติศาสตร์", "en": "Culture & history" } },
+  { "key": "food", "icon": "ti-tools-kitchen-2", "name": { "th": "อาหารและเครื่องดื่ม", "en": "Food & drink" } }
+]

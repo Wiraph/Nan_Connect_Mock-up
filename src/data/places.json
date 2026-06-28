@@ -1,0 +1,493 @@
+[
+  {
+    "id": "wat-phumin",
+    "qrPoint": 42,
+    "name": { "th": "วัดภูมินทร์", "en": "Wat Phumin" },
+    "district": "อ.เมืองน่าน",
+    "craftType": "mural",
+    "tint": "navy",
+    "icon": "ti-building-arch",
+    "lat": 18.7757,
+    "lon": 100.7716,
+    "rating": 4.9,
+    "reviews": 2143,
+    "tags": { "th": ["วัฒนธรรม", "งานคราฟ", "ห้ามพลาด"], "en": ["Culture", "Craft", "Must-see"] },
+    "summary": {
+      "th": "วัดทรงจตุรมุขหนึ่งเดียวในไทย บ้านของจิตรกรรม “ปู่ม่านย่าม่าน”",
+      "en": "Thailand's unique cross-shaped temple, home of the famous whisper mural"
+    },
+    "about": {
+      "th": "วัดภูมินทร์สร้างเมื่อ พ.ศ. 2139 โดดเด่นด้วยพระอุโบสถทรงจตุรมุขที่ประดิษฐานพระประธานสี่ทิศ ภายในมีจิตรกรรมฝาผนังฝีมือช่างไทลื้อ โดยภาพ “ปู่ม่านย่าม่าน” หรือ “กระซิบรักบันลือโลก” กลายเป็นสัญลักษณ์ของจังหวัดน่าน",
+      "en": "Built in 1596, Wat Phumin is famed for its cross-shaped ordination hall housing four Buddha images facing the cardinal directions. Its Tai Lue murals — especially the “Whisper of Love” — have become an icon of Nan."
+    },
+    "experiences": [
+      { "title": { "th": "ชมจิตรกรรมปู่ม่านย่าม่าน", "en": "View the Whisper mural" }, "detail": { "th": "ฟังเรื่องเล่าเบื้องหลังภาพกระซิบรักอันโด่งดัง", "en": "Hear the story behind the legendary whisper" }, "duration": 30, "price": 0 },
+      { "title": { "th": "เวิร์กชอปวาดลายไทลื้อ", "en": "Tai Lue painting workshop" }, "detail": { "th": "ทดลองวาดลวดลายพื้นเมืองกับช่างท้องถิ่น", "en": "Try local motifs with a community artisan" }, "duration": 60, "price": 150 }
+    ],
+    "shopping": [
+      { "title": { "th": "ของที่ระลึกลายกระซิบรัก", "en": "Whisper-mural souvenirs" }, "detail": { "th": "โปสการ์ด ผ้าพิมพ์ลาย และของฝากจากชุมชน", "en": "Postcards, printed cloth, and community crafts" } }
+    ],
+    "visit": {
+      "hours": { "th": "ทุกวัน 08:00–18:00", "en": "Daily 08:00–18:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "054-710-336",
+      "howToGet": { "th": "ใจกลางเมืองน่าน ติดพิพิธภัณฑสถานแห่งชาติ", "en": "City centre, next to the National Museum" }
+    },
+    "news": [
+      { "title": { "th": "เทศกาลแข่งเรือจังหวัดน่าน", "en": "Nan boat racing festival" }, "detail": { "th": "ประเพณีปลายฝนต้นหนาว บริเวณริมน้ำน่านใกล้วัด", "en": "Late-rains tradition by the Nan River nearby" }, "month": "ต.ค." }
+    ]
+  },
+  {
+    "id": "wat-phra-that-chae-haeng",
+    "qrPoint": 7,
+    "name": { "th": "วัดพระธาตุแช่แห้ง", "en": "Wat Phra That Chae Haeng" },
+    "district": "อ.ภูเพียง",
+    "craftType": "culture",
+    "tint": "gold",
+    "icon": "ti-building-monument",
+    "lat": 18.7556,
+    "lon": 100.7969,
+    "rating": 4.8,
+    "reviews": 1876,
+    "tags": { "th": ["วัฒนธรรม", "พระธาตุ"], "en": ["Culture", "Stupa"] },
+    "summary": {
+      "th": "พระธาตุคู่บ้านคู่เมืองน่าน พระธาตุประจำปีเถาะ",
+      "en": "Nan's sacred golden stupa, guardian for those born in the Year of the Rabbit"
+    },
+    "about": {
+      "th": "พระธาตุแช่แห้งเป็นปูชนียสถานสำคัญอายุกว่า 600 ปี องค์เจดีย์บุด้วยทองจังโกเหลืองอร่าม ตั้งเด่นบนเนินเขาทางฝั่งตะวันออกของแม่น้ำน่าน เป็นพระธาตุประจำปีเกิดของผู้ที่เกิดปีเถาะ",
+      "en": "Over 600 years old, this gilded chedi sits on a hill east of the Nan River. It is the birth-year stupa for those born in the Year of the Rabbit and a central pilgrimage site."
+    },
+    "experiences": [
+      { "title": { "th": "เวียนเทียนรอบองค์พระธาตุ", "en": "Candle procession" }, "detail": { "th": "ร่วมพิธีเวียนเทียนยามเย็นในวันสำคัญ", "en": "Join the evening rite on holy days" }, "duration": 45, "price": 0 }
+    ],
+    "shopping": [
+      { "title": { "th": "ตลาดของฝากหน้าวัด", "en": "Temple-front market" }, "detail": { "th": "ผ้าทอ เครื่องเงิน และของพื้นเมือง", "en": "Woven cloth, silverware, and local goods" } }
+    ],
+    "visit": {
+      "hours": { "th": "ทุกวัน 06:00–18:00", "en": "Daily 06:00–18:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "054-601-145",
+      "howToGet": { "th": "ห่างจากตัวเมืองน่าน 3 กม. ฝั่ง อ.ภูเพียง", "en": "3 km from the city, in Phu Phiang district" }
+    },
+    "news": [
+      { "title": { "th": "งานนมัสการพระธาตุแช่แห้ง", "en": "Chae Haeng worship fair" }, "detail": { "th": "งานบุญใหญ่ประจำปีช่วงเดือนสี่เป็ง", "en": "Major annual merit fair in the fourth lunar month" }, "month": "ก.พ.–มี.ค." }
+    ]
+  },
+  {
+    "id": "nan-national-museum",
+    "qrPoint": 15,
+    "name": { "th": "พิพิธภัณฑสถานแห่งชาติ น่าน", "en": "Nan National Museum" },
+    "district": "อ.เมืองน่าน",
+    "craftType": "culture",
+    "tint": "coral",
+    "icon": "ti-building-bank",
+    "lat": 18.779,
+    "lon": 100.771,
+    "rating": 4.7,
+    "reviews": 1209,
+    "tags": { "th": ["วัฒนธรรม", "ประวัติศาสตร์"], "en": ["Culture", "History"] },
+    "summary": {
+      "th": "อดีตหอคำเจ้าผู้ครองนครน่าน ที่เก็บ “งาช้างดำ” คู่บ้านคู่เมือง",
+      "en": "The former royal palace of Nan, home to the legendary Black Ivory tusk"
+    },
+    "about": {
+      "th": "อาคารทรงล้านนาประยุกต์สร้างปี พ.ศ. 2446 เคยเป็นหอคำที่ประทับของเจ้าผู้ครองนครน่าน จัดแสดงโบราณวัตถุ ประวัติศาสตร์ และชาติพันธุ์ของเมืองน่าน ไฮไลต์คืองาช้างดำอันศักดิ์สิทธิ์ และซุ้มต้นลีลาวดีอันโด่งดังด้านหน้า",
+      "en": "Built in 1903 in a Lanna style, this was the residence of Nan's last rulers. It exhibits the province's history, ethnography, and artifacts — highlighted by the sacred Black Ivory and the famous frangipani tunnel out front."
+    },
+    "experiences": [
+      { "title": { "th": "ถ่ายภาพอุโมงค์ต้นลีลาวดี", "en": "Frangipani tunnel photo spot" }, "detail": { "th": "จุดถ่ายรูปยอดนิยมหน้าพิพิธภัณฑ์", "en": "The most photographed spot in Nan" }, "duration": 20, "price": 0 }
+    ],
+    "shopping": [
+      { "title": { "th": "ร้านหนังสือและของที่ระลึก", "en": "Museum gift shop" }, "detail": { "th": "หนังสือประวัติศาสตร์น่านและงานคราฟ", "en": "Local history books and crafts" } }
+    ],
+    "visit": {
+      "hours": { "th": "อังคาร–อาทิตย์ 09:00–16:00 (ปิดวันจันทร์)", "en": "Tue–Sun 09:00–16:00 (closed Mon)" },
+      "admission": { "th": "ผู้ใหญ่ 100 บาท", "en": "Adults 100 THB" },
+      "contact": "054-710-561",
+      "howToGet": { "th": "ใจกลางเมือง ใกล้วัดภูมินทร์", "en": "City centre, near Wat Phumin" }
+    },
+    "news": []
+  },
+  {
+    "id": "bo-kluea",
+    "qrPoint": 88,
+    "name": { "th": "บ่อเกลือสินเธาว์ภูเขา", "en": "Bo Kluea Mountain Salt Wells" },
+    "district": "อ.บ่อเกลือ",
+    "craftType": "culture",
+    "tint": "teal",
+    "icon": "ti-droplet",
+    "lat": 19.0786,
+    "lon": 101.1556,
+    "rating": 4.6,
+    "reviews": 932,
+    "tags": { "th": ["วิถีชุมชน", "ภูมิปัญญา"], "en": ["Community", "Heritage"] },
+    "summary": {
+      "th": "นาเกลือโบราณบนภูเขาสูง แหล่งเกลือสินเธาว์อายุหลายร้อยปี",
+      "en": "Ancient mountain salt wells producing rock salt the traditional way"
+    },
+    "about": {
+      "th": "บ่อเกลือเป็นชุมชนที่ต้มเกลือสินเธาว์จากน้ำเกลือใต้ดินบนภูเขาสูงมายาวนานหลายร้อยปี เป็นภูมิปัญญาที่หาชมได้ยาก นักท่องเที่ยวสามารถชมกระบวนการตักน้ำเกลือ ต้ม และตากเกลือแบบดั้งเดิมได้",
+      "en": "For centuries, Bo Kluea has boiled rock salt from underground brine high in the mountains — a rare living heritage. Visitors can watch the drawing, boiling, and drying of salt the traditional way."
+    },
+    "experiences": [
+      { "title": { "th": "ชมการต้มเกลือภูเขา", "en": "Watch mountain salt boiling" }, "detail": { "th": "เรียนรู้ภูมิปัญญาการต้มเกลือกับชาวบ้าน", "en": "Learn the craft with local villagers" }, "duration": 40, "price": 0 },
+      { "title": { "th": "ทำสปาเกลือ / สครับเกลือ", "en": "Salt scrub experience" }, "detail": { "th": "ผลิตภัณฑ์เกลือสปาจากชุมชน", "en": "Community salt spa products" }, "duration": 30, "price": 120 }
+    ],
+    "shopping": [
+      { "title": { "th": "เกลือภูเขาและผลิตภัณฑ์เกลือ", "en": "Mountain salt products" }, "detail": { "th": "เกลือสปา ดอกเกลือ และของฝากจากชุมชน", "en": "Spa salt, salt flakes, and community goods" } }
+    ],
+    "visit": {
+      "hours": { "th": "ทุกวัน 08:00–17:00", "en": "Daily 08:00–17:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "-",
+      "howToGet": { "th": "อ.บ่อเกลือ ห่างจากตัวเมืองน่านราว 2 ชม.", "en": "Bo Kluea district, about 2 hrs from the city" }
+    },
+    "news": [
+      { "title": { "th": "ฤดูท่องเที่ยว Green Season", "en": "Green-season travel" }, "detail": { "th": "นาขั้นบันไดเขียวขจีและทะเลหมอกช่วงฤดูฝน", "en": "Lush terraces and morning mist in the rainy months" }, "month": "ก.ค.–ต.ค." }
+    ]
+  },
+  {
+    "id": "doi-phu-kha",
+    "qrPoint": 61,
+    "name": { "th": "อุทยานแห่งชาติดอยภูคา", "en": "Doi Phu Kha National Park" },
+    "district": "อ.ปัว",
+    "craftType": "nature",
+    "tint": "teal",
+    "icon": "ti-mountain",
+    "lat": 19.2058,
+    "lon": 101.0769,
+    "rating": 4.8,
+    "reviews": 1544,
+    "tags": { "th": ["ธรรมชาติ", "ทะเลหมอก"], "en": ["Nature", "Sea of mist"] },
+    "summary": {
+      "th": "หลังคาแห่งเมืองน่าน บ้านของต้นชมพูภูคาหนึ่งเดียวในโลก",
+      "en": "The roof of Nan, home to the world's only Bretschneidera ‘Chomphu Phu Kha’"
+    },
+    "about": {
+      "th": "ดอยภูคาเป็นยอดเขาสูงที่สุดของน่าน อุดมด้วยป่าดิบเขาและทะเลหมอก ในเดือนกุมภาพันธ์ต้นชมพูภูคาซึ่งพบเพียงแห่งเดียวในโลกจะออกดอกสีชมพูบานสะพรั่ง เป็นจุดหมายของนักเดินทางสายธรรมชาติ",
+      "en": "Nan's highest range, rich in montane forest and seas of mist. In February the rare Chomphu Phu Kha tree — found nowhere else on earth — blooms pink, drawing nature lovers from across the country."
+    },
+    "experiences": [
+      { "title": { "th": "เดินป่าศึกษาธรรมชาติ", "en": "Nature trail trek" }, "detail": { "th": "เส้นทางป่าดิบเขาและจุดชมทะเลหมอก", "en": "Cloud-forest trails and mist viewpoints" }, "duration": 120, "price": 0 },
+      { "title": { "th": "กางเต็นท์ลานชมดาว", "en": "Stargazing camp" }, "detail": { "th": "พักแรมบนดอยท่ามกลางอากาศหนาว", "en": "Overnight camping in the cool highlands" }, "duration": 0, "price": 300 }
+    ],
+    "shopping": [],
+    "visit": {
+      "hours": { "th": "ทุกวัน 06:00–18:00", "en": "Daily 06:00–18:00" },
+      "admission": { "th": "ผู้ใหญ่ 40 บาท", "en": "Adults 40 THB" },
+      "contact": "054-701-000",
+      "howToGet": { "th": "เส้นทาง ปัว–บ่อเกลือ ทางคดเคี้ยวบนภูเขา", "en": "On the winding Pua–Bo Kluea mountain road" }
+    },
+    "news": [
+      { "title": { "th": "ชมพูภูคาบาน", "en": "Chomphu Phu Kha in bloom" }, "detail": { "th": "ดอกไม้หายากบานเพียงปีละครั้ง", "en": "The rare bloom happens once a year" }, "month": "ก.พ." }
+    ]
+  },
+  {
+    "id": "sapan-village",
+    "qrPoint": 90,
+    "name": { "th": "หมู่บ้านสะปัน", "en": "Sapan Village" },
+    "district": "อ.บ่อเกลือ",
+    "craftType": "nature",
+    "tint": "teal",
+    "icon": "ti-plant-2",
+    "lat": 19.0492,
+    "lon": 101.1281,
+    "rating": 4.7,
+    "reviews": 1102,
+    "tags": { "th": ["วิถีชุมชน", "นาขั้นบันได"], "en": ["Community", "Rice terraces"] },
+    "summary": {
+      "th": "หมู่บ้านเล็กกลางหุบเขา นาขั้นบันได ลำธารใส และวิถีเรียบง่าย",
+      "en": "A tiny valley village of rice terraces, clear streams, and slow living"
+    },
+    "about": {
+      "th": "สะปันเป็นหมู่บ้านเล็ก ๆ ในอำเภอบ่อเกลือ ล้อมรอบด้วยภูเขาและนาขั้นบันได มีลำธารสะปันไหลผ่าน เป็นจุดหมายของการท่องเที่ยวเชิงธรรมชาติและพักผ่อนแบบ slow life ที่กำลังได้รับความนิยม",
+      "en": "Sapan is a small village in Bo Kluea, ringed by mountains and terraced fields with a clear stream running through. It has become a beloved spot for nature and slow-life travel."
+    },
+    "experiences": [
+      { "title": { "th": "เดินเล่นนาขั้นบันได", "en": "Walk the rice terraces" }, "detail": { "th": "ชมวิวนาเขียวขจีและสะพานไม้", "en": "Green terraces and the wooden bridge" }, "duration": 60, "price": 0 },
+      { "title": { "th": "นั่งจิบกาแฟริมธาร", "en": "Streamside coffee" }, "detail": { "th": "คาเฟ่ชุมชนวิวภูเขา", "en": "Community cafés with mountain views" }, "duration": 45, "price": 80 }
+    ],
+    "shopping": [
+      { "title": { "th": "ผลิตภัณฑ์ชุมชนสะปัน", "en": "Sapan community products" }, "detail": { "th": "กาแฟ ผ้าทอ และของฝากท้องถิ่น", "en": "Coffee, woven cloth, and local goods" } }
+    ],
+    "visit": {
+      "hours": { "th": "เที่ยวได้ทั้งวัน", "en": "Open all day" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "-",
+      "howToGet": { "th": "ต.ดงพญา อ.บ่อเกลือ ใกล้จุดชมวิว 1715", "en": "Dong Phaya, Bo Kluea, near viewpoint 1715" }
+    },
+    "news": []
+  },
+  {
+    "id": "doi-samer-dao",
+    "qrPoint": 53,
+    "name": { "th": "ดอยเสมอดาว – ผาหัวสิงห์", "en": "Doi Samer Dao – Pha Hua Sing" },
+    "district": "อ.นาน้อย",
+    "craftType": "nature",
+    "tint": "navy",
+    "icon": "ti-stars",
+    "lat": 18.5419,
+    "lon": 100.7361,
+    "rating": 4.8,
+    "reviews": 1320,
+    "tags": { "th": ["ธรรมชาติ", "กางเต็นท์", "ทะเลหมอก"], "en": ["Nature", "Camping", "Sea of mist"] },
+    "summary": {
+      "th": "จุดชมทะเลหมอกและดาวเต็มฟ้าในอุทยานแห่งชาติศรีน่าน",
+      "en": "A famed mist-and-stargazing ridge in Sri Nan National Park"
+    },
+    "about": {
+      "th": "ดอยเสมอดาวเป็นสันเขายาวในอุทยานแห่งชาติศรีน่าน เป็นจุดกางเต็นท์ยอดนิยมสำหรับชมพระอาทิตย์ขึ้น ทะเลหมอก และท้องฟ้าเต็มไปด้วยดาว ใกล้กันคือผาหัวสิงห์ที่มองเห็นแม่น้ำน่านทอดยาว",
+      "en": "Doi Samer Dao is a long ridge in Sri Nan National Park — a top camping spot for sunrise, mist, and brilliant night skies. Nearby Pha Hua Sing overlooks the winding Nan River."
+    },
+    "experiences": [
+      { "title": { "th": "กางเต็นท์ชมดาว", "en": "Stargazing camp" }, "detail": { "th": "พักแรมบนสันดอยรับลมหนาว", "en": "Camp on the ridge in the cool air" }, "duration": 0, "price": 250 },
+      { "title": { "th": "ชมพระอาทิตย์ขึ้นผาหัวสิงห์", "en": "Sunrise at Pha Hua Sing" }, "detail": { "th": "วิวโค้งแม่น้ำน่านยามเช้า", "en": "The river bend at dawn" }, "duration": 60, "price": 0 }
+    ],
+    "shopping": [],
+    "visit": {
+      "hours": { "th": "ทุกวัน (แนะนำช่วงเช้ามืด)", "en": "Daily (best at dawn)" },
+      "admission": { "th": "ผู้ใหญ่ 40 บาท + ค่ากางเต็นท์", "en": "Adults 40 THB + camp fee" },
+      "contact": "054-731-714",
+      "howToGet": { "th": "อ.นาน้อย ทางขึ้นอุทยานฯ ศรีน่าน", "en": "Na Noi district, via the Sri Nan park road" }
+    },
+    "news": [
+      { "title": { "th": "ฤดูทะเลหมอก", "en": "Mist season" }, "detail": { "th": "ทะเลหมอกหนาแน่นช่วงปลายฝนต้นหนาว", "en": "Thick mist from late rains into winter" }, "month": "พ.ย.–ก.พ." }
+    ]
+  },
+  {
+    "id": "sao-din-na-noi",
+    "qrPoint": 50,
+    "name": { "th": "เสาดินนาน้อย (ฮ่อมจ๊อม)", "en": "Sao Din Na Noi" },
+    "district": "อ.นาน้อย",
+    "craftType": "nature",
+    "tint": "coral",
+    "icon": "ti-mountain",
+    "lat": 18.4997,
+    "lon": 100.6925,
+    "rating": 4.4,
+    "reviews": 640,
+    "tags": { "th": ["ธรรมชาติ", "ภูมิทัศน์"], "en": ["Nature", "Landform"] },
+    "summary": {
+      "th": "เสาดินรูปทรงแปลกตา เกิดจากการกัดเซาะนับล้านปี",
+      "en": "Surreal earth pillars carved by erosion over millennia"
+    },
+    "about": {
+      "th": "เสาดินนาน้อยเป็นปรากฏการณ์ทางธรณีวิทยา ดินและหินถูกกัดเซาะด้วยลมและฝนจนเกิดเป็นเสาและร่องดินรูปทรงประหลาดคล้ายแพะเมืองผี เป็นจุดถ่ายภาพและศึกษาธรรมชาติที่น่าสนใจ",
+      "en": "A geological wonder where wind and rain have eroded soil and rock into strange pillars and gullies. A striking spot for photos and geology lovers."
+    },
+    "experiences": [
+      { "title": { "th": "เดินชมเส้นทางเสาดิน", "en": "Walk the earth-pillar trail" }, "detail": { "th": "เส้นทางสั้นชมภูมิทัศน์แปลกตา", "en": "A short loop through the formations" }, "duration": 40, "price": 0 }
+    ],
+    "shopping": [],
+    "visit": {
+      "hours": { "th": "ทุกวัน 08:00–17:00", "en": "Daily 08:00–17:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "-",
+      "howToGet": { "th": "อ.นาน้อย ใกล้เส้นทางขึ้นดอยเสมอดาว", "en": "Na Noi, near the Doi Samer Dao route" }
+    },
+    "news": []
+  },
+  {
+    "id": "wat-phuket",
+    "qrPoint": 64,
+    "name": { "th": "วัดภูเก็ต", "en": "Wat Phuket" },
+    "district": "อ.ปัว",
+    "craftType": "culture",
+    "tint": "gold",
+    "icon": "ti-building-church",
+    "lat": 19.183,
+    "lon": 100.9286,
+    "rating": 4.6,
+    "reviews": 870,
+    "tags": { "th": ["วัฒนธรรม", "วิวนาข้าว"], "en": ["Culture", "Rice view"] },
+    "summary": {
+      "th": "วัดบนเนินสูงที่มองเห็นนาข้าวและเทือกเขาดอยภูคา",
+      "en": "A hilltop temple overlooking rice fields and the Doi Phu Kha range"
+    },
+    "about": {
+      "th": "วัดภูเก็ตตั้งอยู่บนเนินสูงในอำเภอปัว ลานวัดเปิดโล่งมองเห็นทุ่งนาเขียวขจีและเทือกเขาดอยภูคาเป็นฉากหลัง เป็นจุดชมวิวยามเช้าที่สวยงามและมีบ่อน้ำพญานาคใต้ลานวัด",
+      "en": "Set on a rise in Pua, Wat Phuket's open terrace looks over green paddies backed by the Doi Phu Kha range — a beautiful morning viewpoint with a sacred spring below."
+    },
+    "experiences": [
+      { "title": { "th": "ชมวิวนาข้าวยามเช้า", "en": "Morning rice-field view" }, "detail": { "th": "แสงเช้าเหนือทุ่งนาและขุนเขา", "en": "Dawn light over fields and mountains" }, "duration": 30, "price": 0 }
+    ],
+    "shopping": [
+      { "title": { "th": "ของฝากชุมชนปัว", "en": "Pua community goods" }, "detail": { "th": "กาแฟและผ้าทอไทลื้อ", "en": "Coffee and Tai Lue weaving" } }
+    ],
+    "visit": {
+      "hours": { "th": "ทุกวัน 06:00–18:00", "en": "Daily 06:00–18:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "-",
+      "howToGet": { "th": "อ.ปัว ใกล้ร้านกาแฟบ้านไทลื้อ", "en": "Pua, near the Tai Lue coffee houses" }
+    },
+    "news": []
+  },
+  {
+    "id": "lamduan-weaving",
+    "qrPoint": 67,
+    "name": { "th": "ลำดวนผ้าทอ บ้านไทลื้อ", "en": "Lamduan Tai Lue Weaving" },
+    "district": "อ.ปัว",
+    "craftType": "weaving",
+    "tint": "pink",
+    "icon": "ti-needle",
+    "lat": 19.1786,
+    "lon": 100.9133,
+    "rating": 4.7,
+    "reviews": 512,
+    "tags": { "th": ["งานคราฟ", "ผ้าทอ", "ของฝาก"], "en": ["Craft", "Weaving", "Souvenir"] },
+    "summary": {
+      "th": "แหล่งผ้าทอลายน้ำไหลของชาวไทลื้อบ้านหนองบัว ปัว",
+      "en": "Home of the Tai Lue ‘flowing-water’ weaving of Ban Nong Bua, Pua"
+    },
+    "about": {
+      "th": "ชุมชนไทลื้อในอำเภอปัวสืบทอดการทอผ้าลายน้ำไหลอันเป็นเอกลักษณ์มายาวนาน ลำดวนผ้าทอเป็นศูนย์เรียนรู้ที่นักท่องเที่ยวสามารถชมการทอ เลือกซื้อผ้า และทดลองทอด้วยตนเองได้",
+      "en": "The Tai Lue community of Pua has woven its signature ‘flowing-water’ pattern for generations. Lamduan is a learning centre where visitors can watch, shop, and try weaving themselves."
+    },
+    "experiences": [
+      { "title": { "th": "ทดลองทอผ้าลายน้ำไหล", "en": "Try flowing-water weaving" }, "detail": { "th": "เรียนทอกับช่างทอไทลื้อตัวจริง", "en": "Weave with a real Tai Lue artisan" }, "duration": 60, "price": 200 }
+    ],
+    "shopping": [
+      { "title": { "th": "ผ้าทอลายน้ำไหล", "en": "Flowing-water textiles" }, "detail": { "th": "ผ้าซิ่น ผ้าพันคอ และของตกแต่ง", "en": "Skirts, scarves, and home décor" } }
+    ],
+    "visit": {
+      "hours": { "th": "ทุกวัน 08:30–17:00", "en": "Daily 08:30–17:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "054-791-016",
+      "howToGet": { "th": "บ้านหนองบัว อ.ท่าวังผา–ปัว", "en": "Ban Nong Bua, Tha Wang Pha–Pua" }
+    },
+    "news": []
+  },
+  {
+    "id": "wat-si-phan-ton",
+    "qrPoint": 12,
+    "name": { "th": "วัดศรีพันต้น", "en": "Wat Si Phan Ton" },
+    "district": "อ.เมืองน่าน",
+    "craftType": "culture",
+    "tint": "gold",
+    "icon": "ti-building-church",
+    "lat": 18.7799,
+    "lon": 100.7689,
+    "rating": 4.5,
+    "reviews": 760,
+    "tags": { "th": ["วัฒนธรรม", "พญานาค"], "en": ["Culture", "Naga"] },
+    "summary": {
+      "th": "วิหารสีทองอร่ามกับพญานาคเจ็ดเศียรงดงาม",
+      "en": "A gilded golden viharn guarded by a magnificent seven-headed Naga"
+    },
+    "about": {
+      "th": "วัดศรีพันต้นโดดเด่นด้วยวิหารสีทองทั้งหลัง บันไดทางขึ้นประดับพญานาคเจ็ดเศียรลวดลายวิจิตร ภายในมีภาพจิตรกรรมเล่าเรื่องเมืองน่าน เป็นวัดที่สวยงามและถ่ายภาพได้สวยใจกลางเมือง",
+      "en": "Wat Si Phan Ton is famed for its fully gilded viharn and an ornate seven-headed Naga staircase. Inside, murals tell the story of Nan — a beautiful, photogenic temple in the city centre."
+    },
+    "experiences": [],
+    "shopping": [],
+    "visit": {
+      "hours": { "th": "ทุกวัน 07:00–18:00", "en": "Daily 07:00–18:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "-",
+      "howToGet": { "th": "ใจกลางเมืองน่าน", "en": "Nan city centre" }
+    },
+    "news": []
+  },
+  {
+    "id": "kad-khuang-walking-street",
+    "qrPoint": 20,
+    "name": { "th": "ถนนคนเดินกาดข่วงเมืองน่าน", "en": "Nan Walking Street" },
+    "district": "อ.เมืองน่าน",
+    "craftType": "food",
+    "tint": "coral",
+    "icon": "ti-lamp",
+    "lat": 18.7747,
+    "lon": 100.7725,
+    "rating": 4.6,
+    "reviews": 1430,
+    "tags": { "th": ["อาหาร", "ของฝาก", "ยามเย็น"], "en": ["Food", "Souvenir", "Evening"] },
+    "summary": {
+      "th": "ตลาดเย็นริมข่วงเมือง อาหารพื้นเมืองและงานคราฟ",
+      "en": "An evening market by the old square — local food and crafts"
+    },
+    "about": {
+      "th": "ทุกเย็นวันศุกร์–อาทิตย์ ถนนหน้าวัดภูมินทร์และพิพิธภัณฑ์จะกลายเป็นถนนคนเดิน เต็มไปด้วยอาหารพื้นเมือง ขันโตก งานหัตถกรรม และการแสดงวัฒนธรรม เป็นหัวใจของบรรยากาศยามค่ำเมืองน่าน",
+      "en": "On Friday–Sunday evenings the street by Wat Phumin becomes a walking market full of local food, khan toke dining, handicrafts, and cultural performances — the heart of Nan's nightlife."
+    },
+    "experiences": [
+      { "title": { "th": "ขันโตกริมถนน", "en": "Streetside khan toke" }, "detail": { "th": "นั่งสาดเสื่อชิมอาหารเหนือ", "en": "Sit on mats and taste northern dishes" }, "duration": 60, "price": 150 }
+    ],
+    "shopping": [
+      { "title": { "th": "งานคราฟและของฝาก", "en": "Crafts and souvenirs" }, "detail": { "th": "ผ้าทอ เครื่องเงิน และของทำมือ", "en": "Textiles, silver, and handmade goods" } }
+    ],
+    "visit": {
+      "hours": { "th": "ศุกร์–อาทิตย์ 17:00–22:00", "en": "Fri–Sun 17:00–22:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "-",
+      "howToGet": { "th": "ข่วงเมืองน่าน หน้าวัดภูมินทร์", "en": "Khuang Nan square, by Wat Phumin" }
+    },
+    "news": []
+  },
+  {
+    "id": "viewpoint-1715",
+    "qrPoint": 79,
+    "name": { "th": "จุดชมวิว 1715", "en": "Viewpoint 1715" },
+    "district": "อ.บ่อเกลือ",
+    "craftType": "nature",
+    "tint": "blue",
+    "icon": "ti-mountain",
+    "lat": 19.1,
+    "lon": 101.08,
+    "rating": 4.5,
+    "reviews": 410,
+    "tags": { "th": ["ธรรมชาติ", "จุดชมวิว"], "en": ["Nature", "Viewpoint"] },
+    "summary": {
+      "th": "จุดแวะชมวิวภูเขาสลับซับซ้อนบนเส้นปัว–บ่อเกลือ",
+      "en": "A roadside stop over rolling mountains on the Pua–Bo Kluea route"
+    },
+    "about": {
+      "th": "จุดชมวิว 1715 (ตามหลักกิโลเมตร) เป็นจุดแวะพักยอดนิยมระหว่างทางจากปัวไปบ่อเกลือ มองเห็นทิวเขาซ้อนกันสุดลูกหูลูกตา มีคาเฟ่และมุมถ่ายรูปริมหน้าผา",
+      "en": "Named after its kilometre marker, Viewpoint 1715 is a favourite rest stop between Pua and Bo Kluea, with layered mountain ridges, a café, and clifftop photo spots."
+    },
+    "experiences": [
+      { "title": { "th": "จิบกาแฟชมวิว", "en": "Coffee with a view" }, "detail": { "th": "คาเฟ่ริมหน้าผาวิวภูเขา", "en": "Clifftop café over the ranges" }, "duration": 30, "price": 70 }
+    ],
+    "shopping": [],
+    "visit": {
+      "hours": { "th": "ทุกวัน 07:00–18:00", "en": "Daily 07:00–18:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "-",
+      "howToGet": { "th": "ริมทางหลวง ปัว–บ่อเกลือ", "en": "On the Pua–Bo Kluea highway" }
+    },
+    "news": []
+  },
+  {
+    "id": "wat-nong-bua",
+    "qrPoint": 70,
+    "name": { "th": "วัดหนองบัว", "en": "Wat Nong Bua" },
+    "district": "อ.ท่าวังผา",
+    "craftType": "mural",
+    "tint": "navy",
+    "icon": "ti-building-arch",
+    "lat": 19.1456,
+    "lon": 100.8222,
+    "rating": 4.6,
+    "reviews": 588,
+    "tags": { "th": ["วัฒนธรรม", "งานคราฟ", "จิตรกรรม"], "en": ["Culture", "Craft", "Mural"] },
+    "summary": {
+      "th": "วิหารไทลื้อโบราณกับจิตรกรรมฝาผนังล้ำค่า",
+      "en": "An ancient Tai Lue viharn with priceless wall paintings"
+    },
+    "about": {
+      "th": "วัดหนองบัวเป็นวัดไทลื้อเก่าแก่ในอำเภอท่าวังผา ภายในวิหารมีจิตรกรรมฝาผนังเล่าเรื่องชาดก “จันทคาธ” ฝีมือช่างไทลื้อที่งดงามและหาชมยาก เคียงข้างชุมชนทอผ้าไทลื้อบ้านหนองบัว",
+      "en": "Wat Nong Bua is an old Tai Lue temple in Tha Wang Pha. Its viharn holds rare, exquisite murals of the Chantakhat Jataka by Tai Lue artisans, beside the Ban Nong Bua weaving community."
+    },
+    "experiences": [],
+    "shopping": [
+      { "title": { "th": "ผ้าทอไทลื้อบ้านหนองบัว", "en": "Ban Nong Bua textiles" }, "detail": { "th": "ผ้าทอลายน้ำไหลจากชุมชนข้างวัด", "en": "Flowing-water weaving from the village" } }
+    ],
+    "visit": {
+      "hours": { "th": "ทุกวัน 08:00–17:00", "en": "Daily 08:00–17:00" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม (บริจาคตามศรัทธา)", "en": "Free (donation welcome)" },
+      "contact": "-",
+      "howToGet": { "th": "บ้านหนองบัว อ.ท่าวังผา", "en": "Ban Nong Bua, Tha Wang Pha" }
+    },
+    "news": []
+  }
+]

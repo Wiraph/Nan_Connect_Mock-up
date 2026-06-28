@@ -1,0 +1,9 @@
+[
+  { "key": "attraction", "icon": "ti-building-arch", "tint": "navy", "name": { "th": "แหล่งท่องเที่ยว", "en": "Attractions" } },
+  { "key": "accommodation", "icon": "ti-bed", "tint": "teal", "name": { "th": "ที่พัก / โรงแรม", "en": "Stay" } },
+  { "key": "restaurant", "icon": "ti-tools-kitchen-2", "tint": "coral", "name": { "th": "ร้านอาหาร", "en": "Eat" } },
+  { "key": "souvenir", "icon": "ti-gift", "tint": "gold", "name": { "th": "ของฝาก", "en": "Souvenirs" } },
+  { "key": "spa", "icon": "ti-flower", "tint": "pink", "name": { "th": "สปาและสุขภาพ", "en": "Spa & wellness" } },
+  { "key": "transport", "icon": "ti-car", "tint": "blue", "name": { "th": "เดินทาง / รถเช่า", "en": "Transport" } },
+  { "key": "agency", "icon": "ti-map-2", "tint": "purple", "name": { "th": "ผู้ประกอบการนำเที่ยว", "en": "Tours" } }
+]
