@@ -3,7 +3,7 @@
 import { useState, use } from "react";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/AppHeader";
-import PlaceThumb from "@/components/PlaceThumb";
+import PlaceIllustration, { placeIllo } from "@/components/PlaceIllustration";
 import StarRating from "@/components/StarRating";
 import FeedbackModal from "@/components/FeedbackModal";
 import { useI18n } from "@/i18n/I18nProvider";
@@ -30,8 +30,12 @@ export default function PlacePage({
 
       <main className="mx-auto w-full max-w-5xl flex-1 pb-24 lg:px-8 lg:pt-6">
         {/* Hero */}
-        <div className="relative overflow-hidden lg:rounded-2xl lg:border lg:border-line">
-          <PlaceThumb tint={place.tint} icon={place.icon} className="h-44 w-full lg:h-72" iconSize="text-6xl" />
+        <div className="relative h-44 overflow-hidden lg:h-72 lg:rounded-2xl lg:border lg:border-line">
+          <PlaceIllustration
+            kind={placeIllo(place.id)}
+            tint={place.tint}
+            className="absolute inset-0 h-full w-full"
+          />
           <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-sm shadow">
             <StarRating value={place.rating} size="text-xs" />
             <span className="font-semibold text-navy">{place.rating}</span>
@@ -151,7 +155,7 @@ export default function PlacePage({
             <div className="flex flex-col gap-2">
               {place.news.map((n, i) => (
                 <div key={i} className="flex gap-3 rounded-xl border border-line bg-white p-3">
-                  <div className="flex h-11 w-11 shrink-0 flex-col items-center justify-center rounded-lg bg-navy text-cream">
+                  <div className="flex h-11 w-11 shrink-0 flex-col items-center justify-center rounded-lg bg-indigo text-cream">
                     <i className="ti ti-calendar text-base text-gold" aria-hidden />
                     <span className="text-[10px]">{textLoc(n.month, lang)}</span>
                   </div>

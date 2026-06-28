@@ -12,11 +12,23 @@
   --color-muted: #6b6655;
   --color-line: #d8d0b8;
 
+  /* Lanna หม้อห้อม indigo — tertiary accent for culture/festival */
+  --color-indigo: #2b3a67;
+  --color-indigo-600: #3a4c80;
+  --color-indigo-100: #e3e6f0;
+
   --font-sans: var(--font-noto-thai), system-ui, sans-serif;
+  --font-lanna: var(--font-lanna-src), var(--font-noto-thai), serif;
 }
 
 :root {
   color-scheme: light;
+}
+
+/* Global UI scale — every rem-based size (text, spacing, cards, max-widths)
+   grows together. Bump/lower this single value to scale the whole system. */
+html {
+  font-size: 112.5%; /* 18px base (default 16px) */
 }
 
 html,
@@ -37,6 +49,19 @@ body {
     var(--color-navy) 0 10px,
     var(--color-gold) 10px 20px
   );
+}
+
+/* Lanna "lai nam lai" (flowing-water) zigzag — a thin refined textile border */
+.lanna-strip {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='10' viewBox='0 0 28 10'%3E%3Cpath d='M0 7 L7 2 L14 7 L21 2 L28 7' fill='none' stroke='%23c9a227' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+/* Faint Lanna diamond/kanok motif — hero watermark */
+.lanna-watermark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 5 L43 24 L24 43 L5 24 Z' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Cpath d='M24 14 L34 24 L24 34 L14 24 Z' fill='none' stroke='%23c9a227' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 52px 52px;
 }
 
 .no-scrollbar::-webkit-scrollbar {

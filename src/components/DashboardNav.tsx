@@ -18,7 +18,7 @@ export default function DashboardNav() {
 
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-navy text-cream">
-      <div className="weave-strip h-1.5" />
+      <div className="lanna-strip h-2.5 bg-navy" />
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <div className="flex items-center gap-2">
           <i className="ti ti-chart-pie text-xl text-gold" aria-hidden />

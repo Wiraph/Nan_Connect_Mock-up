@@ -25,16 +25,19 @@ export default function Home() {
     router.push(`/chat${query ? `?q=${encodeURIComponent(query)}` : ""}`);
   };
 
+  const heroText = (th: string, en: string) => (lang === "th" ? th : textLoc(en, lang));
+
   return (
     <>
       <AppHeader />
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-navy text-cream">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 pb-7 pt-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-12">
+        <section className="relative overflow-hidden bg-navy text-cream">
+          <div className="lanna-watermark pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden />
+          <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-7 pt-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-12">
             <div className="max-w-3xl">
-              <h1 className="text-2xl font-bold leading-snug lg:text-5xl">
+              <h1 className="font-lanna text-2xl leading-snug lg:text-5xl">
                 {t("home.hero.title")}
               </h1>
               <p className="mt-1 text-sm text-cream/75 lg:mt-3 lg:text-lg">
@@ -78,7 +81,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="hidden rounded-2xl border border-gold/30 bg-navy-600/60 p-5 shadow-xl lg:block">
+            <div className="hidden min-h-[328px] flex-col overflow-hidden rounded-2xl border border-gold/30 bg-navy-600/60 p-5 shadow-xl lg:flex">
               <div className="weave-strip h-1.5 rounded-full" />
               <div className="mt-5 flex items-start gap-3">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold text-navy">
@@ -103,6 +106,59 @@ export default function Home() {
                   <div className="text-cream/70">
                     {lang === "th" ? "จุดแนะนำ" : textLoc("featured", lang)}
                   </div>
+                </div>
+              </div>
+              <div className="mt-5 flex flex-1 flex-col rounded-xl border border-cream/10 bg-navy/55 p-4">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-xs font-semibold text-cream">
+                    {heroText("ตัวอย่างเส้นทาง AI", "AI journey preview")}
+                  </div>
+                  <div className="rounded-full bg-gold/15 px-2.5 py-1 text-[11px] font-medium text-gold">
+                    {heroText("8 ภาษา", "8 languages")}
+                  </div>
+                </div>
+
+                <div className="relative mt-4 h-28 overflow-hidden rounded-lg border border-cream/10 bg-navy-600/70">
+                  <div
+                    className="absolute inset-0 opacity-30"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(0deg, rgba(245,241,230,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,230,.18) 1px, transparent 1px)",
+                      backgroundSize: "24px 24px",
+                    }}
+                  />
+                  <div className="absolute left-7 right-7 top-[50px] border-t border-dashed border-gold/60" />
+                  <div className="absolute left-[18%] top-4 flex -translate-x-1/2 flex-col items-center gap-1">
+                    <JourneyPoint icon="ti-qrcode" />
+                    <span className="text-[10px] font-medium text-cream/80">{heroText("สแกน QR", "Scan QR")}</span>
+                  </div>
+                  <div className="absolute left-1/2 top-4 flex -translate-x-1/2 flex-col items-center gap-1">
+                    <JourneyPoint icon="ti-message-chatbot" active />
+                    <span className="text-[10px] font-medium text-cream/80">{t("common.askAI")}</span>
+                  </div>
+                  <div className="absolute left-[82%] top-4 flex -translate-x-1/2 flex-col items-center gap-1">
+                    <JourneyPoint icon="ti-route" />
+                    <span className="text-[10px] font-medium text-cream/80">{heroText("เปิดเส้นทาง", "Open route")}</span>
+                  </div>
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1 rounded-full bg-cream/10 px-2 py-1 text-[10px] text-cream/75">
+                    <i className="ti ti-map-pin-filled text-gold" aria-hidden />
+                    Wat Phumin
+                  </div>
+                  <div className="absolute bottom-3 right-3 flex items-center gap-1 rounded-full bg-cream/10 px-2 py-1 text-[10px] text-cream/75">
+                    <i className="ti ti-sparkles text-gold" aria-hidden />
+                    {heroText("เหมาะกับคุณ", "Personalized")}
+                  </div>
+                </div>
+
+                <div className="mt-3 flex items-center justify-between gap-3 text-[11px] text-cream/70">
+                  <span className="inline-flex items-center gap-1">
+                    <i className="ti ti-clock text-gold" aria-hidden />
+                    {heroText("แนะนำทันที", "Instant guide")}
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <i className="ti ti-chart-dots-2 text-gold" aria-hidden />
+                    {heroText("ส่งเข้าแดชบอร์ด", "Dashboard signal")}
+                  </span>
                 </div>
               </div>
             </div>
@@ -177,6 +233,20 @@ function QuickAction({ href, icon, label }: { href: string; icon: string; label:
       <i className={`ti ${icon} text-xl text-gold`} aria-hidden />
       <span className="text-[11px]">{label}</span>
     </Link>
+  );
+}
+
+function JourneyPoint({ icon, active = false }: { icon: string; active?: boolean }) {
+  return (
+    <div
+      className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border ${
+        active
+          ? "border-gold bg-gold text-navy shadow-lg shadow-gold/20"
+          : "border-gold/45 bg-navy text-gold"
+      }`}
+    >
+      <i className={`ti ${icon} text-lg`} aria-hidden />
+    </div>
   );
 }
 

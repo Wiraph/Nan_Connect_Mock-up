@@ -4,7 +4,7 @@ import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import LangSwitcher from "@/components/LangSwitcher";
-import PlaceThumb from "@/components/PlaceThumb";
+import PlaceIllustration, { placeIllo } from "@/components/PlaceIllustration";
 import StarRating from "@/components/StarRating";
 import { useI18n } from "@/i18n/I18nProvider";
 import { getPlaceByQr, getCraft } from "@/lib/data";
@@ -24,12 +24,12 @@ export default function ScanLanding({
   return (
     <div className="min-h-dvh bg-navy text-cream">
     <div className="relative flex min-h-dvh w-full flex-col overflow-hidden bg-navy text-cream">
-      <div className="weave-strip h-2" />
+      <div className="lanna-strip h-2.5 bg-navy" />
 
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         <div className="flex items-center gap-2">
           <i className="ti ti-qrcode text-xl text-gold" aria-hidden />
-          <span className="font-semibold">Nan Connect</span>
+          <span className="font-lanna text-lg">Nan Connect</span>
         </div>
         <LangSwitcher dark />
       </div>
@@ -56,8 +56,12 @@ export default function ScanLanding({
           )}
         </div>
 
-        <div className="mt-5 overflow-hidden rounded-2xl">
-          <PlaceThumb tint={place.tint} icon={place.icon} className="h-40 w-full lg:h-64" iconSize="text-6xl" />
+        <div className="relative mt-5 h-40 overflow-hidden rounded-2xl lg:h-64">
+          <PlaceIllustration
+            kind={placeIllo(place.id)}
+            tint={place.tint}
+            className="absolute inset-0 h-full w-full"
+          />
         </div>
 
         <div className="mt-3 flex items-center gap-2">

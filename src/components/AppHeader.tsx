@@ -34,7 +34,7 @@ export default function AppHeader({
 
   return (
     <header className="sticky top-0 z-20">
-      <div className="weave-strip h-1.5" />
+      <div className="lanna-strip h-2.5 bg-navy" />
       <div className="bg-navy text-cream">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
           <div className="flex items-center gap-2">
@@ -50,7 +50,7 @@ export default function AppHeader({
               <i className="ti ti-qrcode text-xl text-gold" aria-hidden />
             )}
             <Link href="/" className="flex flex-col leading-tight">
-              <span className="text-[15px] font-semibold">
+              <span className={title ? "text-[15px] font-semibold" : "font-lanna text-lg"}>
                 {title ?? "Nan Connect"}
               </span>
               {!title && (

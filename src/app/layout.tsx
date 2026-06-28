@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Thai } from "next/font/google";
+import { Noto_Sans_Thai, Chonburi } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/i18n/I18nProvider";
 
@@ -7,6 +7,13 @@ const notoThai = Noto_Sans_Thai({
   variable: "--font-noto-thai",
   subsets: ["thai", "latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+// Lanna-flavoured display face — used only for the wordmark and big headings.
+const chonburi = Chonburi({
+  variable: "--font-lanna-src",
+  subsets: ["thai", "latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -19,7 +26,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="th" className={notoThai.variable}>
+    <html lang="th" className={`${notoThai.variable} ${chonburi.variable}`}>
       <head>
         <link
           rel="stylesheet"

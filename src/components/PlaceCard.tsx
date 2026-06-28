@@ -5,7 +5,7 @@ import { Place } from "@/lib/types";
 import { districtLoc, loc } from "@/lib/types";
 import { useI18n } from "@/i18n/I18nProvider";
 import { getCraft } from "@/lib/data";
-import PlaceThumb from "./PlaceThumb";
+import PlaceIllustration, { placeIllo } from "./PlaceIllustration";
 import StarRating from "./StarRating";
 
 export default function PlaceCard({ place }: { place: Place }) {
@@ -17,7 +17,13 @@ export default function PlaceCard({ place }: { place: Place }) {
       href={`/place/${place.id}`}
       className="group flex overflow-hidden rounded-xl border border-line bg-white transition hover:border-navy-300"
     >
-      <PlaceThumb tint={place.tint} icon={place.icon} className="w-24 shrink-0" />
+      <div className="relative w-28 shrink-0 self-stretch overflow-hidden">
+        <PlaceIllustration
+          kind={placeIllo(place.id)}
+          tint={place.tint}
+          className="absolute inset-0 h-full w-full"
+        />
+      </div>
       <div className="min-w-0 flex-1 p-3">
         <div className="flex items-center gap-1 text-[11px] text-muted">
           <i className="ti ti-map-pin text-xs" aria-hidden />
