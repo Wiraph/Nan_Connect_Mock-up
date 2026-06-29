@@ -38,11 +38,20 @@ export default function PlacePage({
       <main className="mx-auto w-full max-w-5xl flex-1 pb-24 lg:px-8 lg:pt-6">
         {/* Hero */}
         <div className="relative h-44 overflow-hidden lg:h-72 lg:rounded-2xl lg:border lg:border-line">
-          <PlaceIllustration
-            kind={placeIllo(place.id)}
-            tint={place.tint}
-            className="absolute inset-0 h-full w-full"
-          />
+          {place.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={place.image}
+              alt={loc(place.name, lang)}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          ) : (
+            <PlaceIllustration
+              kind={placeIllo(place.id)}
+              tint={place.tint}
+              className="absolute inset-0 h-full w-full"
+            />
+          )}
           <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-sm shadow">
             <StarRating value={place.rating} size="text-xs" />
             <span className="font-semibold text-navy">{place.rating}</span>
@@ -74,6 +83,37 @@ export default function PlacePage({
         {/* About & culture */}
         <Section icon="ti-book-2" title={t("place.about")}>
           <p className="text-sm leading-relaxed text-ink">{loc(place.about, lang)}</p>
+          {place.source && loc(place.source, lang) && (
+            <p className="mt-2 text-[12.5px] leading-relaxed text-muted">
+              <span className="font-medium text-navy">{t("place.source")}: </span>
+              {loc(place.source, lang)}
+            </p>
+          )}
+          {place.directory && loc(place.directory, lang) && (
+            <p className="mt-2 text-[12.5px] leading-relaxed text-muted">
+              <span className="font-medium text-navy">{t("place.directory")}: </span>
+              {loc(place.directory, lang)}
+            </p>
+          )}
+          {place.certDocs && place.certDocs.length > 0 && (
+            <div className="mt-3">
+              <div className="mb-1 text-xs font-medium text-navy">{t("place.documents")}</div>
+              <div className="flex flex-col gap-1.5">
+                {place.certDocs.map((doc, i) => (
+                  <a
+                    key={i}
+                    href={doc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-1.5 rounded-lg border border-line bg-white px-3 py-1.5 text-[12.5px] text-navy underline"
+                  >
+                    <i className="ti ti-file-text text-base text-gold" aria-hidden />
+                    {loc(doc.name, lang)}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </Section>
 
         {/* Experiences */}
@@ -81,20 +121,32 @@ export default function PlacePage({
           <Section icon="ti-compass" title={t("place.experiences")}>
             <div className="flex flex-col gap-2">
               {place.experiences.map((ex, i) => (
-                <div key={i} className="rounded-xl border border-line bg-white p-3">
-                  <div className="font-medium text-navy">{loc(ex.title, lang)}</div>
-                  <p className="text-[12.5px] text-muted">{loc(ex.detail, lang)}</p>
-                  <div className="mt-1.5 flex gap-3 text-[11px] text-gold-700">
-                    {ex.duration ? (
+                <div key={i} className="overflow-hidden rounded-xl border border-line bg-white">
+                  {ex.image && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={ex.image} alt={loc(ex.title, lang)} className="h-32 w-full object-cover" />
+                  )}
+                  <div className="p-3">
+                    <div className="font-medium text-navy">{loc(ex.title, lang)}</div>
+                    <p className="text-[12.5px] text-muted">{loc(ex.detail, lang)}</p>
+                    <div className="mt-1.5 flex flex-wrap gap-3 text-[11px] text-gold-700">
+                      {ex.duration ? (
+                        <span className="inline-flex items-center gap-1">
+                          <i className="ti ti-clock text-xs" aria-hidden />
+                          {ex.duration} {t("common.minutes")}
+                        </span>
+                      ) : null}
+                      {ex.capacity ? (
+                        <span className="inline-flex items-center gap-1">
+                          <i className="ti ti-users text-xs" aria-hidden />
+                          {ex.capacity}
+                        </span>
+                      ) : null}
                       <span className="inline-flex items-center gap-1">
-                        <i className="ti ti-clock text-xs" aria-hidden />
-                        {ex.duration} {t("common.minutes")}
+                        <i className="ti ti-tag text-xs" aria-hidden />
+                        {ex.price ? `${ex.price} ${t("common.baht")}` : t("place.admission") + ": 0"}
                       </span>
-                    ) : null}
-                    <span className="inline-flex items-center gap-1">
-                      <i className="ti ti-tag text-xs" aria-hidden />
-                      {ex.price ? `${ex.price} ${t("common.baht")}` : t("place.admission") + ": 0"}
-                    </span>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -107,9 +159,15 @@ export default function PlacePage({
           <Section icon="ti-shopping-bag" title={t("place.shopping")}>
             <div className="flex flex-col gap-2">
               {place.shopping.map((s, i) => (
-                <div key={i} className="rounded-xl border border-line bg-white p-3">
-                  <div className="font-medium text-navy">{loc(s.title, lang)}</div>
-                  <p className="text-[12.5px] text-muted">{loc(s.detail, lang)}</p>
+                <div key={i} className="overflow-hidden rounded-xl border border-line bg-white">
+                  {s.image && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={s.image} alt={loc(s.title, lang)} className="h-32 w-full object-cover" />
+                  )}
+                  <div className="p-3">
+                    <div className="font-medium text-navy">{loc(s.title, lang)}</div>
+                    <p className="text-[12.5px] text-muted">{loc(s.detail, lang)}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -121,6 +179,12 @@ export default function PlacePage({
           <div className="overflow-hidden rounded-xl border border-line bg-white">
             <InfoRow icon="ti-clock" label={t("place.openingHours")} value={loc(place.visit.hours, lang)} />
             <InfoRow icon="ti-ticket" label={t("place.admission")} value={loc(place.visit.admission, lang)} />
+            {place.visit.price && loc(place.visit.price, lang) && (
+              <InfoRow icon="ti-cash" label={t("place.price")} value={loc(place.visit.price, lang)} />
+            )}
+            {place.visit.rentalCar && loc(place.visit.rentalCar, lang) && (
+              <InfoRow icon="ti-car" label={t("place.rentalCar")} value={loc(place.visit.rentalCar, lang)} />
+            )}
             <InfoRow icon="ti-route" label={t("place.location")} value={loc(place.visit.howToGet, lang)} />
             {place.visit.contact && place.visit.contact !== "-" && (
               <InfoRow
@@ -154,6 +218,20 @@ export default function PlacePage({
                   <div>
                     <div className="font-medium text-navy">{loc(n.title, lang)}</div>
                     <p className="text-[12.5px] text-muted">{loc(n.detail, lang)}</p>
+                    <div className="mt-1 flex flex-wrap gap-3 text-[11px] text-gold-700">
+                      {n.timeframe && loc(n.timeframe, lang) && (
+                        <span className="inline-flex items-center gap-1">
+                          <i className="ti ti-clock-hour-4 text-xs" aria-hidden />
+                          {loc(n.timeframe, lang)}
+                        </span>
+                      )}
+                      {n.weather && loc(n.weather, lang) && (
+                        <span className="inline-flex items-center gap-1">
+                          <i className="ti ti-cloud text-xs" aria-hidden />
+                          {loc(n.weather, lang)}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}

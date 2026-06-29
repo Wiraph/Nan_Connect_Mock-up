@@ -23,10 +23,21 @@ function emptyPlace(): Place {
     reviews: 0,
     tags: { th: [], en: [] },
     summary: { th: "", en: "" },
+    image: "",
     about: { th: "", en: "" },
+    source: { th: "", en: "" },
+    directory: { th: "", en: "" },
+    certDocs: [],
     experiences: [],
     shopping: [],
-    visit: { hours: { th: "", en: "" }, admission: { th: "", en: "" }, contact: "", howToGet: { th: "", en: "" } },
+    visit: {
+      hours: { th: "", en: "" },
+      admission: { th: "", en: "" },
+      contact: "",
+      howToGet: { th: "", en: "" },
+      price: { th: "", en: "" },
+      rentalCar: { th: "", en: "" },
+    },
     news: [],
   };
 }
@@ -70,8 +81,33 @@ export default function PlaceForm({ initial }: { initial?: Place }) {
           <Field label="สรุปสั้น (ไทย)"><input className={cx} value={p.summary.th} onChange={(e) => set({ summary: { ...p.summary, th: e.target.value } })} /></Field>
           <Field label="สรุปสั้น (อังกฤษ)"><input className={cx} value={p.summary.en} onChange={(e) => set({ summary: { ...p.summary, en: e.target.value } })} /></Field>
         </Row>
-        <Field label="ประวัติ/ที่มา (ไทย)"><textarea rows={3} className={cx} value={p.about.th} onChange={(e) => set({ about: { ...p.about, th: e.target.value } })} /></Field>
-        <Field label="ประวัติ/ที่มา (อังกฤษ)"><textarea rows={3} className={cx} value={p.about.en} onChange={(e) => set({ about: { ...p.about, en: e.target.value } })} /></Field>
+        <Field label="ประวัติ (ไทย)"><textarea rows={3} className={cx} value={p.about.th} onChange={(e) => set({ about: { ...p.about, th: e.target.value } })} /></Field>
+        <Field label="ประวัติ (อังกฤษ)"><textarea rows={3} className={cx} value={p.about.en} onChange={(e) => set({ about: { ...p.about, en: e.target.value } })} /></Field>
+        <Row>
+          <Field label="ที่มา (ไทย)"><input className={cx} value={p.source?.th ?? ""} onChange={(e) => set({ source: { th: e.target.value, en: p.source?.en ?? "" } })} /></Field>
+          <Field label="ที่มา (อังกฤษ)"><input className={cx} value={p.source?.en ?? ""} onChange={(e) => set({ source: { th: p.source?.th ?? "", en: e.target.value } })} /></Field>
+        </Row>
+        <Row>
+          <Field label="ทำเนียบ (ไทย)"><input className={cx} value={p.directory?.th ?? ""} onChange={(e) => set({ directory: { th: e.target.value, en: p.directory?.en ?? "" } })} /></Field>
+          <Field label="ทำเนียบ (อังกฤษ)"><input className={cx} value={p.directory?.en ?? ""} onChange={(e) => set({ directory: { th: p.directory?.th ?? "", en: e.target.value } })} /></Field>
+        </Row>
+        <Field label="รูปหลัก (URL/path เช่น /places/wat-phumin.jpg)"><input className={cx} value={p.image ?? ""} onChange={(e) => set({ image: e.target.value })} /></Field>
+        <Field label="เอกสารรับรองประกอบกิจการ">
+          <ListEditor
+            items={p.certDocs ?? []}
+            onChange={(certDocs) => set({ certDocs })}
+            empty={{ name: { th: "", en: "" }, url: "" }}
+            render={(it, upd) => (
+              <>
+                <Row>
+                  <input className={cx} placeholder="ชื่อเอกสาร (ไทย)" value={it.name.th} onChange={(e) => upd({ name: { ...it.name, th: e.target.value } })} />
+                  <input className={cx} placeholder="ชื่อเอกสาร (อังกฤษ)" value={it.name.en} onChange={(e) => upd({ name: { ...it.name, en: e.target.value } })} />
+                </Row>
+                <input className={cx} placeholder="URL/path เอกสาร" value={it.url} onChange={(e) => upd({ url: e.target.value })} />
+              </>
+            )}
+          />
+        </Field>
         <Row>
           <Field label="แท็ก ไทย (คั่นด้วย ,)"><input className={cx} value={p.tags.th.join(", ")} onChange={(e) => set({ tags: { ...p.tags, th: splitTags(e.target.value) } })} /></Field>
           <Field label="แท็ก อังกฤษ (คั่นด้วย ,)"><input className={cx} value={p.tags.en.join(", ")} onChange={(e) => set({ tags: { ...p.tags, en: splitTags(e.target.value) } })} /></Field>
@@ -101,6 +137,12 @@ export default function PlaceForm({ initial }: { initial?: Place }) {
                 <input className={cx} placeholder="รายละเอียด (ไทย)" value={it.detail.th} onChange={(e) => upd({ detail: { ...it.detail, th: e.target.value } })} />
                 <input className={cx} placeholder="รายละเอียด (อังกฤษ)" value={it.detail.en} onChange={(e) => upd({ detail: { ...it.detail, en: e.target.value } })} />
               </Row>
+              <div className="grid gap-3 sm:grid-cols-3">
+                <input type="number" className={cx} placeholder="เวลา (นาที)" value={it.duration ?? ""} onChange={(e) => upd({ duration: numOrUndef(e.target.value) })} />
+                <input type="number" className={cx} placeholder="จำนวนคน" value={it.capacity ?? ""} onChange={(e) => upd({ capacity: numOrUndef(e.target.value) })} />
+                <input type="number" className={cx} placeholder="ราคา (บาท)" value={it.price ?? ""} onChange={(e) => upd({ price: numOrUndef(e.target.value) })} />
+              </div>
+              <input className={cx} placeholder="รูปภาพ (URL/path)" value={it.image ?? ""} onChange={(e) => upd({ image: e.target.value })} />
             </>
           )}
         />
@@ -121,6 +163,7 @@ export default function PlaceForm({ initial }: { initial?: Place }) {
                 <input className={cx} placeholder="รายละเอียด (ไทย)" value={it.detail.th} onChange={(e) => upd({ detail: { ...it.detail, th: e.target.value } })} />
                 <input className={cx} placeholder="รายละเอียด (อังกฤษ)" value={it.detail.en} onChange={(e) => upd({ detail: { ...it.detail, en: e.target.value } })} />
               </Row>
+              <input className={cx} placeholder="รูปภาพ (URL/path)" value={it.image ?? ""} onChange={(e) => upd({ image: e.target.value })} />
             </>
           )}
         />
@@ -136,6 +179,14 @@ export default function PlaceForm({ initial }: { initial?: Place }) {
           <Field label="ค่าเข้าชม (อังกฤษ)"><input className={cx} value={p.visit.admission.en} onChange={(e) => set({ visit: { ...p.visit, admission: { ...p.visit.admission, en: e.target.value } } })} /></Field>
         </Row>
         <Field label="ติดต่อ (เบอร์โทร)"><input className={cx} value={p.visit.contact} onChange={(e) => set({ visit: { ...p.visit, contact: e.target.value } })} /></Field>
+        <Row>
+          <Field label="ราคา (ไทย)"><input className={cx} value={p.visit.price?.th ?? ""} onChange={(e) => set({ visit: { ...p.visit, price: { th: e.target.value, en: p.visit.price?.en ?? "" } } })} /></Field>
+          <Field label="ราคา (อังกฤษ)"><input className={cx} value={p.visit.price?.en ?? ""} onChange={(e) => set({ visit: { ...p.visit, price: { th: p.visit.price?.th ?? "", en: e.target.value } } })} /></Field>
+        </Row>
+        <Row>
+          <Field label="รถเช่า (ไทย)"><input className={cx} value={p.visit.rentalCar?.th ?? ""} onChange={(e) => set({ visit: { ...p.visit, rentalCar: { th: e.target.value, en: p.visit.rentalCar?.en ?? "" } } })} /></Field>
+          <Field label="รถเช่า (อังกฤษ)"><input className={cx} value={p.visit.rentalCar?.en ?? ""} onChange={(e) => set({ visit: { ...p.visit, rentalCar: { th: p.visit.rentalCar?.th ?? "", en: e.target.value } } })} /></Field>
+        </Row>
         <Row>
           <Field label="การเดินทาง (ไทย)"><input className={cx} value={p.visit.howToGet.th} onChange={(e) => set({ visit: { ...p.visit, howToGet: { ...p.visit.howToGet, th: e.target.value } } })} /></Field>
           <Field label="การเดินทาง (อังกฤษ)"><input className={cx} value={p.visit.howToGet.en} onChange={(e) => set({ visit: { ...p.visit, howToGet: { ...p.visit.howToGet, en: e.target.value } } })} /></Field>
@@ -165,6 +216,10 @@ export default function PlaceForm({ initial }: { initial?: Place }) {
                 <input className={cx} placeholder="รายละเอียด (ไทย)" value={it.detail.th} onChange={(e) => upd({ detail: { ...it.detail, th: e.target.value } })} />
                 <input className={cx} placeholder="เดือน เช่น ก.พ." value={it.month} onChange={(e) => upd({ month: e.target.value })} />
               </Row>
+              <Row>
+                <input className={cx} placeholder="ช่วงเวลา (ไทย)" value={it.timeframe?.th ?? ""} onChange={(e) => upd({ timeframe: { th: e.target.value, en: it.timeframe?.en ?? "" } })} />
+                <input className={cx} placeholder="สภาพอากาศ (ไทย)" value={it.weather?.th ?? ""} onChange={(e) => upd({ weather: { th: e.target.value, en: it.weather?.en ?? "" } })} />
+              </Row>
             </>
           )}
         />
@@ -184,6 +239,12 @@ export default function PlaceForm({ initial }: { initial?: Place }) {
 
 function splitTags(s: string): string[] {
   return s.split(",").map((x) => x.trim()).filter(Boolean);
+}
+
+function numOrUndef(s: string): number | undefined {
+  if (s.trim() === "") return undefined;
+  const n = Number(s);
+  return Number.isNaN(n) ? undefined : n;
 }
 
 function Section({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {

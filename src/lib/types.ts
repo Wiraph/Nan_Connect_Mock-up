@@ -43,21 +43,48 @@ export type Place = {
   reviews: number;
   tags: { th: string[]; en: string[] };
   summary: { th: string; en: string };
+  /** หมวด 1: รูปหลักของสถานที่ (path เช่น /places/wat-phumin.jpg); ว่าง = ใช้ภาพวาด */
+  image?: string;
   about: { th: string; en: string };
+  /** หมวด 1: ที่มา */
+  source?: { th: string; en: string };
+  /** หมวด 1: ทำเนียบ */
+  directory?: { th: string; en: string };
+  /** หมวด 1: เอกสารรับรองประกอบกิจการ */
+  certDocs?: { name: { th: string; en: string }; url: string }[];
   experiences: {
     title: { th: string; en: string };
     detail: { th: string; en: string };
     duration?: number;
     price?: number;
+    /** หมวด 2: จำนวนคน */
+    capacity?: number;
+    image?: string;
   }[];
-  shopping: { title: { th: string; en: string }; detail: { th: string; en: string } }[];
+  shopping: {
+    title: { th: string; en: string };
+    detail: { th: string; en: string };
+    image?: string;
+  }[];
   visit: {
     hours: { th: string; en: string };
     admission: { th: string; en: string };
     contact: string;
     howToGet: { th: string; en: string };
+    /** หมวด 4: ราคา */
+    price?: { th: string; en: string };
+    /** หมวด 4: รถเช่า */
+    rentalCar?: { th: string; en: string };
   };
-  news: { title: { th: string; en: string }; detail: { th: string; en: string }; month: string }[];
+  news: {
+    title: { th: string; en: string };
+    detail: { th: string; en: string };
+    month: string;
+    /** หมวด 5: ช่วงเวลา */
+    timeframe?: { th: string; en: string };
+    /** หมวด 5: สภาพอากาศ */
+    weather?: { th: string; en: string };
+  }[];
 };
 
 export type Business = {
