@@ -7,7 +7,8 @@ import LangSwitcher from "@/components/LangSwitcher";
 import PlaceIllustration, { placeIllo } from "@/components/PlaceIllustration";
 import StarRating from "@/components/StarRating";
 import { useI18n } from "@/i18n/I18nProvider";
-import { getPlaceByQr, getCraft } from "@/lib/data";
+import { useDataStore } from "@/lib/DataStore";
+import { getCraft } from "@/lib/data";
 import { districtLoc, loc } from "@/lib/types";
 
 export default function ScanLanding({
@@ -17,8 +18,12 @@ export default function ScanLanding({
 }) {
   const { qrId } = use(params);
   const { t, lang } = useI18n();
+  const { getPlaceByQr, hydrated } = useDataStore();
   const place = getPlaceByQr(parseInt(qrId, 10));
-  if (!place) return notFound();
+  if (!place) {
+    if (hydrated) return notFound();
+    return <div className="p-6 text-center text-cream/70">…</div>;
+  }
   const craft = getCraft(place.craftType);
 
   return (

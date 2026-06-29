@@ -37,8 +37,39 @@ export default function PlanPage() {
           </div>
         </div>
 
+        <nav
+          aria-label="Plan menu"
+          className="lanna-subnav-surface mt-4 overflow-hidden rounded-2xl border border-gold/25 text-cream shadow-sm"
+        >
+          <div className="lanna-strip h-2 bg-navy" />
+          <div className="no-scrollbar flex gap-2 overflow-x-auto p-2">
+            <a
+              href="#plan-timeline"
+              aria-current="page"
+              className="lanna-subnav-link flex shrink-0 items-center gap-1.5 rounded-full border border-gold bg-gold px-3 py-1.5 text-xs font-medium text-navy lg:px-4 lg:text-sm"
+            >
+              <i className="ti ti-list-numbers text-sm lg:text-base" aria-hidden />
+              {t("plan.title")}
+            </a>
+            <button
+              onClick={() => setSeed((s) => s + 1)}
+              className="lanna-subnav-link flex shrink-0 items-center gap-1.5 rounded-full border border-cream/10 bg-navy-600/70 px-3 py-1.5 text-xs font-medium text-cream hover:border-gold/50 lg:px-4 lg:text-sm"
+            >
+              <i className="ti ti-refresh text-sm text-gold lg:text-base" aria-hidden />
+              {t("plan.regenerate")}
+            </button>
+            <Link
+              href="/map"
+              className="lanna-subnav-link flex shrink-0 items-center gap-1.5 rounded-full border border-cream/10 bg-navy-600/70 px-3 py-1.5 text-xs font-medium text-cream hover:border-gold/50 lg:px-4 lg:text-sm"
+            >
+              <i className="ti ti-map-2 text-sm text-gold lg:text-base" aria-hidden />
+              {t("nav.map")}
+            </Link>
+          </div>
+        </nav>
+
         {/* Timeline */}
-        <div key={seed} className="relative mt-6 pl-2 lg:mt-7 lg:pl-4">
+        <div id="plan-timeline" key={seed} className="relative mt-6 scroll-mt-28 pl-2 lg:mt-7 lg:pl-4">
           <div className="absolute bottom-4 left-[18px] top-3 w-0.5 bg-line lg:left-[24px]" />
           <div className="flex flex-col gap-3 lg:gap-4">
             {stops.map((s, i) => {

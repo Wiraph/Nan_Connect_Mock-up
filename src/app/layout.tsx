@@ -3,6 +3,7 @@ import { Noto_Sans_Thai, Chonburi } from "next/font/google";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
 import { I18nProvider } from "@/i18n/I18nProvider";
+import { DataStoreProvider } from "@/lib/DataStore";
 
 const notoThai = Noto_Sans_Thai({
   variable: "--font-noto-thai",
@@ -35,7 +36,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-dvh antialiased">
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <DataStoreProvider>{children}</DataStoreProvider>
+        </I18nProvider>
       </body>
     </html>
   );

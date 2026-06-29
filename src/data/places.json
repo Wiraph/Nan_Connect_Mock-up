@@ -263,8 +263,8 @@
     "craftType": "nature",
     "tint": "coral",
     "icon": "ti-mountain",
-    "lat": 18.4997,
-    "lon": 100.6925,
+    "lat": 18.303664,
+    "lon": 100.753968,
     "rating": 4.4,
     "reviews": 640,
     "tags": { "th": ["ธรรมชาติ", "ภูมิทัศน์"], "en": ["Nature", "Landform"] },
@@ -489,5 +489,43 @@
       "howToGet": { "th": "บ้านหนองบัว อ.ท่าวังผา", "en": "Ban Nong Bua, Tha Wang Pha" }
     },
     "news": []
+  },
+  {
+    "id": "sagad-village",
+    "qrPoint": 96,
+    "name": { "th": "หมู่บ้านสกาด", "en": "Sagad Village" },
+    "district": "อ.ปัว",
+    "craftType": "weaving",
+    "tint": "purple",
+    "icon": "ti-plant-2",
+    "lat": 19.1606,
+    "lon": 101.0972,
+    "rating": 4.7,
+    "reviews": 712,
+    "tags": { "th": ["ชุมชนนำร่อง", "วิถีชุมชน", "ผ้าทอ"], "en": ["Pilot community", "Community", "Weaving"] },
+    "summary": {
+      "th": "หมู่บ้านชาติพันธุ์ลัวะบนพื้นที่สูง ผ้าทอลายสกาดและไร่กาแฟ",
+      "en": "A highland Lua ethnic village known for ‘Sagad’ weaving and coffee farms"
+    },
+    "about": {
+      "th": "หมู่บ้านสกาด ตำบลสกาด อำเภอปัว เป็นชุมชนชาติพันธุ์ลัวะบนพื้นที่สูงที่มีอากาศเย็นตลอดปี โดดเด่นด้วยผ้าทอ “ลายสกาด” อันเป็นเอกลักษณ์ ไร่กาแฟอาราบิก้า นาขั้นบันได และวิถีเกษตรดั้งเดิม เป็นหนึ่งในหมู่บ้านนำร่องการท่องเที่ยวอัจฉริยะของจังหวัดน่าน",
+      "en": "Ban Sagad in Pua is a highland Lua ethnic community with cool weather year-round, famed for its distinctive ‘Sagad’ weaving, arabica coffee farms, rice terraces, and traditional farming life — one of Nan's smart-tourism pilot villages."
+    },
+    "experiences": [
+      { "title": { "th": "ชมการทอผ้าลายสกาด", "en": "Watch Sagad weaving" }, "detail": { "th": "เรียนรู้ลายผ้าโบราณกับช่างทอลัวะ", "en": "Learn the ancient pattern with Lua weavers" }, "duration": 60, "price": 100 },
+      { "title": { "th": "ชิมกาแฟสกาด", "en": "Taste Sagad coffee" }, "detail": { "th": "กาแฟอาราบิก้าปลูกบนดอยสกาด", "en": "Arabica grown on the Sagad highlands" }, "duration": 30, "price": 60 }
+    ],
+    "shopping": [
+      { "title": { "th": "ผ้าทอลายสกาดและกาแฟ", "en": "Sagad textiles and coffee" }, "detail": { "th": "ผลิตภัณฑ์ชุมชนจากกลุ่มทอผ้าและไร่กาแฟ", "en": "Community products from the weaving group and coffee farms" } }
+    ],
+    "visit": {
+      "hours": { "th": "เที่ยวได้ทั้งวัน", "en": "Open all day" },
+      "admission": { "th": "ไม่เสียค่าเข้าชม", "en": "Free entry" },
+      "contact": "-",
+      "howToGet": { "th": "ต.สกาด อ.ปัว เส้นทางปัว–บ่อเกลือ", "en": "Sagad, Pua, on the Pua–Bo Kluea route" }
+    },
+    "news": [
+      { "title": { "th": "ฤดูกาแฟและทะเลหมอก", "en": "Coffee and mist season" }, "detail": { "th": "เก็บเกี่ยวกาแฟและชมทะเลหมอกช่วงปลายฝนต้นหนาว", "en": "Coffee harvest and morning mist from late rains into winter" }, "month": "พ.ย.–ม.ค." }
+    ]
   }
 ]

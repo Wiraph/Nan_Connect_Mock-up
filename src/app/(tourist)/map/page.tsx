@@ -11,7 +11,8 @@ import type {
 import AppHeader from "@/components/AppHeader";
 import StarRating from "@/components/StarRating";
 import { useI18n } from "@/i18n/I18nProvider";
-import { craftTypes, places, TINT_HEX } from "@/lib/data";
+import { craftTypes, TINT_HEX } from "@/lib/data";
+import { useDataStore } from "@/lib/DataStore";
 import { NAN_BOUNDARY } from "@/lib/nanBoundary";
 import { districtLoc, loc, Place } from "@/lib/types";
 
@@ -61,7 +62,7 @@ const ROUTES = [
     points: [
       [18.7757, 100.7716],
       [18.5419, 100.7361],
-      [18.4997, 100.6925],
+      [18.303664, 100.753968],
     ] as LatLngExpression[],
   },
   {
@@ -116,6 +117,7 @@ function markerHtml(place: Place, active: boolean) {
 
 export default function MapPage() {
   const { t, lang } = useI18n();
+  const { places } = useDataStore();
   const [craft, setCraft] = useState<string | null>(null);
   const [selected, setSelected] = useState<string | null>("wat-phumin");
   const [mapReady, setMapReady] = useState(false);
@@ -129,7 +131,7 @@ export default function MapPage() {
 
   const visible = useMemo(
     () => (craft ? places.filter((p) => p.craftType === craft) : places),
-    [craft]
+    [craft, places]
   );
   const selectedPlace = places.find((p) => p.id === selected);
   const activePlace =
@@ -250,12 +252,14 @@ export default function MapPage() {
     <>
       <AppHeader title={t("nav.map")} showBack />
       <main className="flex flex-1 flex-col">
-        <div className="bg-navy">
-          <div className="no-scrollbar mx-auto flex w-full max-w-7xl gap-2 overflow-x-auto px-4 py-2.5 lg:px-8 lg:py-3">
+        <div className="lanna-subnav-surface border-b border-gold/20">
+          <div className="no-scrollbar flex w-full gap-2 overflow-x-auto px-4 py-2.5 pr-8 lg:px-8 lg:py-3 lg:pr-10">
             <button
               onClick={() => setCraft(null)}
-              className={`flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium lg:px-4 lg:text-sm ${
-                craft === null ? "bg-gold text-navy" : "bg-navy-600 text-cream"
+              className={`lanna-subnav-link flex shrink-0 items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-medium lg:px-4 lg:text-sm ${
+                craft === null
+                  ? "border-gold bg-gold text-navy"
+                  : "border-cream/10 bg-navy-600/70 text-cream hover:border-gold/50"
               }`}
             >
               {t("common.viewAll")}
@@ -264,8 +268,10 @@ export default function MapPage() {
               <button
                 key={ct.key}
                 onClick={() => setCraft((v) => (v === ct.key ? null : ct.key))}
-                className={`flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium lg:px-4 lg:text-sm ${
-                  craft === ct.key ? "bg-gold text-navy" : "bg-navy-600 text-cream"
+                className={`lanna-subnav-link flex shrink-0 items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-medium lg:px-4 lg:text-sm ${
+                  craft === ct.key
+                    ? "border-gold bg-gold text-navy"
+                    : "border-cream/10 bg-navy-600/70 text-cream hover:border-gold/50"
                 }`}
               >
                 <i className={`ti ${ct.icon} text-sm lg:text-base`} aria-hidden />
@@ -336,10 +342,10 @@ export default function MapPage() {
                   <button
                     key={p.id}
                     onClick={() => choosePlace(p.id)}
-                    className={`flex items-center gap-2 rounded-xl border p-2 text-left transition ${
+                    className={`lanna-subnav-link flex items-center gap-2 rounded-xl border p-2 text-left transition ${
                       activePlace?.id === p.id
                         ? "border-gold bg-cream"
-                        : "border-line bg-white hover:border-navy-300"
+                        : "border-gold/20 bg-white hover:border-gold/60"
                     }`}
                   >
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-[11px] font-bold text-gold">

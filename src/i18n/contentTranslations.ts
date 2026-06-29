@@ -152,6 +152,16 @@ const content: Record<string, ContentMap> = {
   "Nan Walking Street": { zh: "南府步行街", ja: "ナーン・ウォーキングストリート", lo: "ຖະໜົນຄົນຍ່າງນ່ານ", id: "Jalan Pejalan Kaki Nan", vi: "Phố đi bộ Nan", my: "နန်း လမ်းလျှောက်ဈေး" },
   "Viewpoint 1715": { zh: "1715观景点", ja: "ビューポイント1715", lo: "ຈຸດຊົມວິວ 1715", id: "Titik Pandang 1715", vi: "Điểm ngắm cảnh 1715", my: "ရှုခင်းကြည့်နေရာ 1715" },
   "Wat Nong Bua": { zh: "农布寺", ja: "ワット・ノーンブア", lo: "ວັດໜອງບົວ", id: "Wat Nong Bua", vi: "Wat Nong Bua", my: "ဝတ်နောင်ဘွာ" },
+  "Sagad Village": { zh: "สกาด村", ja: "サカード村", lo: "ບ້ານສະກາດ", id: "Desa Sagad", vi: "Làng Sagad", my: "ဆကာဒ်ရွာ" },
+  "A highland Lua ethnic village known for ‘Sagad’ weaving and coffee farms": {
+    zh: "高地拉佤族村寨，以“สกาด”织布和咖啡园闻名",
+    ja: "「サカード」織物とコーヒー農園で知られる高地ルア族の村",
+    lo: "ບ້ານຊາວລົວເທິງທີ່ສູງ ມີຊື່ດ້ານຜ້າທໍລາຍສະກາດ ແລະ ໄຮ່ກາເຟ",
+    id: "Desa etnis Lua dataran tinggi yang terkenal dengan tenun ‘Sagad’ dan kebun kopi",
+    vi: "Làng dân tộc Lua vùng cao nổi tiếng với dệt ‘Sagad’ và vườn cà phê",
+    my: "‘ဆကာဒ်’ ယက်ထည်နှင့် ကော်ဖီခြံများဖြင့် ထင်ရှားသော တောင်ပေါ်လူဝါတိုင်းရင်းသားရွာ",
+  },
+  "Pilot community": { zh: "试点社区", ja: "パイロット集落", lo: "ຊຸมຊົນນຳຮ່ອງ", id: "Komunitas percontohan", vi: "Cộng đồng thí điểm", my: "စမ်းသပ်ရွာ" },
 
   "Thailand's unique cross-shaped temple, home of the famous whisper mural": {
     zh: "泰国独一无二的十字形寺庙，以著名的悄悄话壁画闻名",

@@ -30,6 +30,7 @@ const KIND_BY_ID: Record<string, IlloKind> = {
   "kad-khuang-walking-street": "market",
   "viewpoint-1715": "viewpoint",
   "wat-nong-bua": "temple",
+  "sagad-village": "rice-terrace",
 };
 
 export function placeIllo(id: string): IlloKind {

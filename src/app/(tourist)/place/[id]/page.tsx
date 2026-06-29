@@ -7,7 +7,8 @@ import PlaceIllustration, { placeIllo } from "@/components/PlaceIllustration";
 import StarRating from "@/components/StarRating";
 import FeedbackModal from "@/components/FeedbackModal";
 import { useI18n } from "@/i18n/I18nProvider";
-import { getCraft, getPlace } from "@/lib/data";
+import { useDataStore } from "@/lib/DataStore";
+import { getCraft } from "@/lib/data";
 import { districtLoc, loc, textLoc } from "@/lib/types";
 
 export default function PlacePage({
@@ -17,12 +18,18 @@ export default function PlacePage({
 }) {
   const { id } = use(params);
   const { t, lang } = useI18n();
+  const { getPlace, hydrated } = useDataStore();
   const [showFeedback, setShowFeedback] = useState(false);
   const place = getPlace(id);
-  if (!place) return notFound();
+  if (!place) {
+    if (hydrated) return notFound();
+    return <main className="flex-1 p-6 text-center text-muted">…</main>;
+  }
   const craft = getCraft(place.craftType);
 
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lon}`;
+  const mapsQuery = `${place.name.th} ${place.district} จังหวัดน่าน`;
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(mapsQuery)}`;
 
   return (
     <>
@@ -125,28 +132,13 @@ export default function PlacePage({
             )}
           </div>
 
-          {/* Mini map */}
-          <a
-            href={mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative mt-3 flex h-28 items-center justify-center overflow-hidden rounded-xl border border-line bg-cream-200"
-          >
-            <div
-              className="absolute inset-0 opacity-30"
-              style={{
-                backgroundImage:
-                  "linear-gradient(0deg, #cfc8ad 1px, transparent 1px), linear-gradient(90deg, #cfc8ad 1px, transparent 1px)",
-                backgroundSize: "22px 22px",
-              }}
-            />
-            <div className="z-10 flex flex-col items-center text-navy">
-              <i className="ti ti-map-pin-filled text-3xl text-[#d85a30]" aria-hidden />
-              <span className="mt-1 rounded-full bg-white px-3 py-1 text-xs font-medium shadow">
-                {place.lat.toFixed(4)}, {place.lon.toFixed(4)} · {t("common.openMap")}
-              </span>
-            </div>
-          </a>
+          <MiniPlaceMap
+            lat={place.lat}
+            lon={place.lon}
+            label={loc(place.name, lang)}
+            mapsUrl={mapsUrl}
+            openMapLabel={t("common.openMap")}
+          />
         </Section>
 
         {/* News & events */}
@@ -173,7 +165,7 @@ export default function PlacePage({
       {/* Floating actions (sit above the global bottom nav) */}
       <div className="sticky bottom-0 z-10 mx-auto flex w-full max-w-5xl gap-2 border-t border-line bg-white/95 px-4 py-3 backdrop-blur lg:mb-6 lg:rounded-2xl lg:border lg:px-4">
         <a
-          href={mapsUrl}
+          href={directionsUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-navy py-2.5 text-sm font-medium text-cream"
@@ -195,6 +187,104 @@ export default function PlacePage({
       )}
     </>
   );
+}
+
+function MiniPlaceMap({
+  lat,
+  lon,
+  label,
+  mapsUrl,
+  openMapLabel,
+}: {
+  lat: number;
+  lon: number;
+  label: string;
+  mapsUrl: string;
+  openMapLabel: string;
+}) {
+  const map = getStaticMapTiles(lat, lon);
+
+  return (
+    <a
+      href={mapsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${label} ${openMapLabel}`}
+      className="group relative mt-3 block h-36 overflow-hidden rounded-xl border border-line bg-cream-200 shadow-sm lg:h-48"
+    >
+      <div
+        className="absolute left-1/2 top-1/2 z-0 grid max-w-none"
+        style={{
+          gridTemplateColumns: `repeat(${map.columns}, 256px)`,
+          height: map.rows * 256,
+          transform: `translate(${-map.centerOffsetX}px, ${-map.centerOffsetY}px)`,
+          width: map.columns * 256,
+        }}
+        aria-hidden
+      >
+        {map.tiles.map((tile) => (
+          <span
+            key={`${tile.x}-${tile.y}`}
+            className="block h-64 w-64 bg-cover bg-center"
+            style={{ backgroundImage: `url(${tile.src})` }}
+          />
+        ))}
+      </div>
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-navy/15 via-transparent to-transparent" />
+      <span className="place-mini-map-marker pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-full">
+        <i className="ti ti-map-pin-filled" aria-hidden />
+      </span>
+      <div className="absolute inset-x-3 bottom-3 z-20 flex justify-center">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-medium text-navy shadow transition group-hover:text-gold-700">
+          <i className="ti ti-map-pin text-sm text-gold" aria-hidden />
+          {label} · {openMapLabel}
+        </span>
+      </div>
+      <span className="absolute bottom-2 right-2 z-20 rounded bg-white/80 px-1.5 py-0.5 text-[10px] text-muted shadow-sm">
+        © OSM
+      </span>
+    </a>
+  );
+}
+
+function getStaticMapTiles(lat: number, lon: number) {
+  const zoom = 14;
+  const tileSize = 256;
+  const radiusX = 3;
+  const radiusY = 2;
+  const columns = radiusX * 2 + 1;
+  const rows = radiusY * 2 + 1;
+  const n = 2 ** zoom;
+  const latRad = (lat * Math.PI) / 180;
+  const xFloat = ((lon + 180) / 360) * n;
+  const yFloat =
+    ((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2) * n;
+  const xTile = Math.floor(xFloat);
+  const yTile = Math.floor(yFloat);
+  const xFrac = xFloat - xTile;
+  const yFrac = yFloat - yTile;
+  const tiles: { src: string; x: number; y: number }[] = [];
+
+  for (let dy = -radiusY; dy <= radiusY; dy += 1) {
+    for (let dx = -radiusX; dx <= radiusX; dx += 1) {
+      const x = (xTile + dx + n) % n;
+      const y = yTile + dy;
+      if (y < 0 || y >= n) continue;
+      tiles.push({
+        src: `https://tile.openstreetmap.org/${zoom}/${x}/${y}.png`,
+        x,
+        y,
+      });
+    }
+  }
+
+  return {
+    centerOffsetX: (radiusX + xFrac) * tileSize,
+    centerOffsetY: (radiusY + yFrac) * tileSize,
+    columns,
+    rows,
+    tiles,
+  };
 }
 
 function Section({

@@ -6,7 +6,8 @@ import AppHeader from "@/components/AppHeader";
 import PlaceCard from "@/components/PlaceCard";
 import BusinessCard from "@/components/BusinessCard";
 import { useI18n } from "@/i18n/I18nProvider";
-import { businessesByCategory, getCategory, places } from "@/lib/data";
+import { useDataStore } from "@/lib/DataStore";
+import { getCategory } from "@/lib/data";
 import { loc } from "@/lib/types";
 
 const CRAFT_MAP: Record<string, string[]> = {
@@ -24,17 +25,18 @@ export default function CategoryPage({
 }) {
   const { type } = use(params);
   const { t, lang } = useI18n();
+  const { places, businessesForCategory } = useDataStore();
   const [q, setQ] = useState("");
   const [limit, setLimit] = useState(20);
   const cat = getCategory(type);
 
-  const biz = useMemo(() => businessesByCategory[type] ?? [], [type]);
+  const biz = useMemo(() => businessesForCategory(type), [type, businessesForCategory]);
   const placeItems = useMemo(
     () =>
       type === "attraction"
         ? places
         : places.filter((p) => (CRAFT_MAP[type] ?? []).includes(p.craftType)),
-    [type]
+    [type, places]
   );
 
   const filteredBiz = useMemo(

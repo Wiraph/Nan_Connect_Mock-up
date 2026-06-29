@@ -6,18 +6,20 @@ import { useRouter } from "next/navigation";
 import AppHeader from "@/components/AppHeader";
 import PlaceCard from "@/components/PlaceCard";
 import { useI18n } from "@/i18n/I18nProvider";
-import { categories, craftTypes, places } from "@/lib/data";
+import { categories, craftTypes } from "@/lib/data";
+import { useDataStore } from "@/lib/DataStore";
 import { loc, textLoc } from "@/lib/types";
 
 export default function Home() {
   const { t, lang } = useI18n();
   const router = useRouter();
+  const { places } = useDataStore();
   const [query, setQuery] = useState("");
   const [craft, setCraft] = useState<string | null>(null);
 
   const featured = useMemo(
     () => (craft ? places.filter((p) => p.craftType === craft) : places),
-    [craft]
+    [craft, places]
   );
 
   const submit = (e: React.FormEvent) => {

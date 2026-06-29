@@ -5,7 +5,8 @@ import { notFound } from "next/navigation";
 import AppHeader from "@/components/AppHeader";
 import FeedbackModal from "@/components/FeedbackModal";
 import { useI18n } from "@/i18n/I18nProvider";
-import { getBusiness, getCategory } from "@/lib/data";
+import { useDataStore } from "@/lib/DataStore";
+import { getCategory } from "@/lib/data";
 import { districtLoc, loc } from "@/lib/types";
 
 export default function BizPage({
@@ -15,9 +16,13 @@ export default function BizPage({
 }) {
   const { id } = use(params);
   const { t, lang } = useI18n();
+  const { getBusiness, hydrated } = useDataStore();
   const [showFeedback, setShowFeedback] = useState(false);
   const biz = getBusiness(id);
-  if (!biz) return notFound();
+  if (!biz) {
+    if (hydrated) return notFound();
+    return <main className="flex-1 p-6 text-center text-muted">…</main>;
+  }
   const cat = getCategory(biz.category);
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     biz.name + " " + biz.district + " น่าน"

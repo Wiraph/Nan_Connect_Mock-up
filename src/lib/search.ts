@@ -1,7 +1,7 @@
 import { languages } from "@/i18n/dictionaries";
 import { translateContentText } from "@/i18n/contentTranslations";
 import { districtLoc, type Business, type Place } from "@/lib/types";
-import { getCraft, hotels, operators, places } from "@/lib/data";
+import { getCraft } from "@/lib/data";
 
 const LANGS = languages.map((l) => l.code);
 
@@ -28,9 +28,9 @@ function districtVariants(d: string): string[] {
   return out;
 }
 
-const placeIndex = places.map((p) => {
+function placeHay(p: Place): string {
   const craft = getCraft(p.craftType);
-  const hay = [
+  return [
     ...variants(p.name),
     ...variants(p.summary),
     ...tagVariants(p.tags),
@@ -39,17 +39,15 @@ const placeIndex = places.map((p) => {
     p.about.th,
     p.about.en,
   ]
-    .join("  ")
+    .join("  ")
     .toLowerCase();
-  return { place: p, hay };
-});
+}
 
-const bizIndex = [...hotels, ...operators].map((b) => {
-  const hay = [b.name, b.address, b.contact ?? "", b.facebook ?? "", ...districtVariants(b.district)]
+function bizHay(b: Business): string {
+  return [b.name, b.address, b.contact ?? "", b.facebook ?? "", ...districtVariants(b.district)]
     .join(" ")
     .toLowerCase();
-  return { biz: b, hay };
-});
+}
 
 function matches(hay: string, query: string): boolean {
   const tokens = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
@@ -57,12 +55,16 @@ function matches(hay: string, query: string): boolean {
   return tokens.every((t) => hay.includes(t));
 }
 
-export function searchPlaces(query: string): Place[] {
+export function searchPlaces(query: string, places: Place[]): Place[] {
   if (!query.trim()) return [];
-  return placeIndex.filter((x) => matches(x.hay, query)).map((x) => x.place);
+  return places.filter((p) => matches(placeHay(p), query));
 }
 
-export function searchBusinesses(query: string, limit = 40): Business[] {
+export function searchBusinesses(
+  query: string,
+  businesses: Business[],
+  limit = 40
+): Business[] {
   if (!query.trim()) return [];
-  return bizIndex.filter((x) => matches(x.hay, query)).slice(0, limit).map((x) => x.biz);
+  return businesses.filter((b) => matches(bizHay(b), query)).slice(0, limit);
 }

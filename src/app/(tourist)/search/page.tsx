@@ -6,15 +6,20 @@ import AppHeader from "@/components/AppHeader";
 import PlaceCard from "@/components/PlaceCard";
 import BusinessCard from "@/components/BusinessCard";
 import { useI18n } from "@/i18n/I18nProvider";
+import { useDataStore } from "@/lib/DataStore";
 import { searchBusinesses, searchPlaces } from "@/lib/search";
 
 function SearchInner() {
   const { t } = useI18n();
+  const store = useDataStore();
   const sp = useSearchParams();
   const [q, setQ] = useState(sp.get("q") ?? "");
 
-  const places = useMemo(() => searchPlaces(q), [q]);
-  const businesses = useMemo(() => searchBusinesses(q), [q]);
+  const places = useMemo(() => searchPlaces(q, store.places), [q, store.places]);
+  const businesses = useMemo(
+    () => searchBusinesses(q, store.businesses),
+    [q, store.businesses]
+  );
   const total = places.length + businesses.length;
   const hasQuery = q.trim().length > 0;
 
