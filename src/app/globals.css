@@ -78,6 +78,54 @@ body {
   scrollbar-width: none;
 }
 
+.leaflet-container {
+  font-family: var(--font-sans);
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+
+.nan-map-marker-wrapper {
+  background: transparent;
+  border: 0;
+}
+
+.nan-map-marker {
+  align-items: center;
+  background: var(--marker-bg, var(--color-navy));
+  border: 3px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(27, 42, 74, 0.28);
+  color: #fff;
+  display: inline-flex;
+  height: 36px;
+  justify-content: center;
+  transition:
+    box-shadow 0.2s ease,
+    height 0.2s ease,
+    width 0.2s ease;
+  width: 36px;
+}
+
+.nan-map-marker i {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.nan-map-marker.is-active {
+  border-color: var(--color-gold);
+  box-shadow:
+    0 0 0 6px rgba(201, 162, 39, 0.22),
+    0 12px 24px rgba(27, 42, 74, 0.32);
+  height: 44px;
+  width: 44px;
+}
+
+.nan-map-marker.is-active i {
+  font-size: 22px;
+}
+
 /* ---------- Animations ---------- */
 @keyframes nc-rise {
   from {

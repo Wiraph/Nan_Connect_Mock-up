@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Thai, Chonburi } from "next/font/google";
+import "leaflet/dist/leaflet.css";
 import "./globals.css";
 import { I18nProvider } from "@/i18n/I18nProvider";
 
