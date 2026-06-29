@@ -21,15 +21,15 @@ function SearchInner() {
   return (
     <>
       <AppHeader title={t("common.search")} showBack />
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-8 pt-4 lg:px-8">
-        <div className="flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5">
-          <i className="ti ti-search text-lg text-muted" aria-hidden />
+      <main className="mx-auto w-full max-w-7xl flex-1 px-4 pb-8 pt-4 lg:px-8 lg:pt-6">
+        <div className="flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 lg:px-5 lg:py-3">
+          <i className="ti ti-search text-lg text-muted lg:text-xl" aria-hidden />
           <input
             autoFocus
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder={t("home.search.placeholder")}
-            className="min-w-0 flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-muted"
+            className="min-w-0 flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-muted lg:text-base"
           />
           {q && (
             <button onClick={() => setQ("")} aria-label="Clear" className="text-muted">
@@ -39,7 +39,7 @@ function SearchInner() {
         </div>
 
         {hasQuery && (
-          <p className="mt-3 text-xs text-muted">
+          <p className="mt-3 text-xs text-muted lg:text-sm">
             {total} · &ldquo;{q}&rdquo;
           </p>
         )}
@@ -47,11 +47,11 @@ function SearchInner() {
         {/* Places */}
         {places.length > 0 && (
           <section className="mt-4">
-            <h2 className="mb-2 flex items-center gap-2 text-sm font-semibold text-navy">
+            <h2 className="mb-2 flex items-center gap-2 text-sm font-semibold text-navy lg:text-base">
               <i className="ti ti-map-pin text-base text-gold" aria-hidden />
               {t("home.featured")} ({places.length})
             </h2>
-            <div className="stagger flex flex-col gap-3">
+            <div className="stagger grid gap-3 lg:grid-cols-2 xl:grid-cols-3">
               {places.map((p) => (
                 <PlaceCard key={p.id} place={p} />
               ))}
@@ -62,11 +62,11 @@ function SearchInner() {
         {/* Businesses */}
         {businesses.length > 0 && (
           <section className="mt-5">
-            <h2 className="mb-2 flex items-center gap-2 text-sm font-semibold text-navy">
+            <h2 className="mb-2 flex items-center gap-2 text-sm font-semibold text-navy lg:text-base">
               <i className="ti ti-building-store text-base text-gold" aria-hidden />
               {t("nav.explore")} ({businesses.length})
             </h2>
-            <div className="stagger flex flex-col gap-2">
+            <div className="stagger grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
               {businesses.map((b) => (
                 <BusinessCard key={b.id} biz={b} />
               ))}

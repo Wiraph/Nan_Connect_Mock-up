@@ -35,27 +35,29 @@ export default function MapPage() {
       <AppHeader title={t("nav.map")} showBack />
       <main className="flex flex-1 flex-col">
         {/* Filter chips */}
-        <div className="no-scrollbar flex gap-2 overflow-x-auto bg-navy px-4 py-2.5">
-          <button
-            onClick={() => setCraft(null)}
-            className={`flex shrink-0 items-center gap-1 rounded-full px-3 py-1 text-xs ${
-              craft === null ? "bg-gold text-navy" : "bg-navy-600 text-cream"
-            }`}
-          >
-            {t("common.viewAll")}
-          </button>
-          {craftTypes.map((ct) => (
+        <div className="bg-navy">
+          <div className="no-scrollbar mx-auto flex w-full max-w-7xl gap-2 overflow-x-auto px-4 py-2.5 lg:px-8 lg:py-3">
             <button
-              key={ct.key}
-              onClick={() => setCraft((v) => (v === ct.key ? null : ct.key))}
-              className={`flex shrink-0 items-center gap-1 rounded-full px-3 py-1 text-xs ${
-                craft === ct.key ? "bg-gold text-navy" : "bg-navy-600 text-cream"
+              onClick={() => setCraft(null)}
+              className={`flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium lg:px-4 lg:text-sm ${
+                craft === null ? "bg-gold text-navy" : "bg-navy-600 text-cream"
               }`}
             >
-              <i className={`ti ${ct.icon} text-sm`} aria-hidden />
-              {loc(ct.name, lang)}
+              {t("common.viewAll")}
             </button>
-          ))}
+            {craftTypes.map((ct) => (
+              <button
+                key={ct.key}
+                onClick={() => setCraft((v) => (v === ct.key ? null : ct.key))}
+                className={`flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium lg:px-4 lg:text-sm ${
+                  craft === ct.key ? "bg-gold text-navy" : "bg-navy-600 text-cream"
+                }`}
+              >
+                <i className={`ti ${ct.icon} text-sm lg:text-base`} aria-hidden />
+                {loc(ct.name, lang)}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Map area */}
@@ -93,38 +95,38 @@ export default function MapPage() {
               >
                 <span
                   className={`flex items-center justify-center rounded-full border-2 border-white shadow ${
-                    isSel ? "h-9 w-9" : "h-7 w-7"
+                    isSel ? "h-10 w-10" : "h-8 w-8"
                   }`}
                   style={{ backgroundColor: c.fg }}
                 >
-                  <i className={`ti ${p.icon} text-sm text-white`} aria-hidden />
+                  <i className={`ti ${p.icon} text-base text-white`} aria-hidden />
                 </span>
               </button>
             );
           })}
 
-          <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-medium text-navy shadow">
-            <i className="ti ti-map-pin text-xs" aria-hidden /> {visible.length} {t("home.featured")}
+          <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-navy shadow lg:left-8 lg:top-4 lg:px-4 lg:py-1.5 lg:text-sm">
+            <i className="ti ti-map-pin text-xs lg:text-sm" aria-hidden /> {visible.length} {t("home.featured")}
           </div>
         </div>
 
         {/* Selected card */}
         {sel && (
-          <div className="border-t border-line bg-white p-3">
-            <Link href={`/place/${sel.id}`} className="flex items-center gap-3">
+          <div className="border-t border-line bg-white">
+            <Link href={`/place/${sel.id}`} className="mx-auto flex w-full max-w-7xl items-center gap-3 p-3 lg:px-8 lg:py-4">
               <div
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg lg:h-14 lg:w-14"
                 style={{ backgroundColor: (TINT_HEX[sel.tint] ?? TINT_HEX.navy).bg }}
               >
                 <i
-                  className={`ti ${sel.icon} text-2xl`}
+                  className={`ti ${sel.icon} text-2xl lg:text-3xl`}
                   style={{ color: (TINT_HEX[sel.tint] ?? TINT_HEX.navy).fg }}
                   aria-hidden
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="truncate font-semibold text-navy">{loc(sel.name, lang)}</h3>
-                <div className="flex items-center gap-1 text-[11px] text-muted">
+                <h3 className="truncate font-semibold text-navy lg:text-lg">{loc(sel.name, lang)}</h3>
+                <div className="flex items-center gap-1 text-[11px] text-muted lg:text-xs">
                   <i className="ti ti-map-pin text-xs" aria-hidden />
                   {districtLoc(sel.district, lang)}
                 </div>

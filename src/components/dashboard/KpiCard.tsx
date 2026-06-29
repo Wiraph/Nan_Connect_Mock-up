@@ -13,24 +13,24 @@ export default function KpiCard({
 }) {
   return (
     <div
-      className={`hover-lift anim-rise rounded-2xl border p-4 ${
+      className={`hover-lift anim-rise rounded-2xl border p-4 lg:p-5 ${
         accent ? "border-gold bg-navy text-cream" : "border-line bg-white"
       }`}
     >
       <div className="flex items-center gap-2">
         <i
-          className={`ti ${icon} text-lg ${accent ? "text-gold" : "text-navy-300"}`}
+          className={`ti ${icon} text-lg lg:text-xl ${accent ? "text-gold" : "text-navy-300"}`}
           aria-hidden
         />
-        <span className={`text-[12px] ${accent ? "text-cream/70" : "text-muted"}`}>
+        <span className={`text-[12px] lg:text-sm ${accent ? "text-cream/70" : "text-muted"}`}>
           {label}
         </span>
       </div>
-      <div className={`mt-2 text-2xl font-bold ${accent ? "text-cream" : "text-navy"}`}>
+      <div className={`mt-2 text-2xl font-bold lg:text-3xl ${accent ? "text-cream" : "text-navy"}`}>
         {value}
       </div>
       {sub && (
-        <div className={`mt-0.5 text-[11px] ${accent ? "text-gold" : "text-muted"}`}>
+        <div className={`mt-0.5 text-[11px] lg:text-xs ${accent ? "text-gold" : "text-muted"}`}>
           {sub}
         </div>
       )}

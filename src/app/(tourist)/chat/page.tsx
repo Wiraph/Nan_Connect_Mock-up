@@ -44,7 +44,7 @@ function ChatInner() {
       setTyping(true);
 
       const cards = matchPlaces(text);
-      const useMock = () => {
+      const runMockFallback = () => {
         const res = getAIResponse(text, lang as LangCode);
         setMessages((m) => [
           ...m,
@@ -63,7 +63,7 @@ function ChatInner() {
 
         // No key / rate-limited / error → JSON fallback signal → use mock.
         if (!resp.ok || !resp.body || ctype.includes("application/json")) {
-          useMock();
+          runMockFallback();
           return;
         }
 
@@ -129,7 +129,7 @@ function ChatInner() {
           });
         }
       } catch {
-        useMock();
+        runMockFallback();
       }
     },
     [messages, lang]
@@ -153,71 +153,71 @@ function ChatInner() {
   return (
     <>
       <AppHeader title={t("chat.title")} showBack />
-      <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col lg:px-8">
-        <div className="relative flex-1">
+      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 pb-6 pt-4 lg:px-8 lg:pt-6">
+        <div className="relative flex min-h-[calc(100dvh-190px)] flex-1 flex-col overflow-hidden rounded-2xl border border-line bg-cream/70 lg:min-h-[620px]">
           {/* Lanna textile backdrop */}
           <div className="lanna-soft pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden />
-          <div className="relative space-y-3 px-4 py-4 lg:px-0 lg:py-6">
-          {/* Guide intro */}
-          <div className="anim-rise overflow-hidden rounded-2xl border border-line bg-white">
-            <div className="lanna-strip h-2.5 bg-navy" />
-            <div className="flex items-start gap-3 p-3">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy ring-2 ring-gold ring-offset-2 ring-offset-white">
-                <i className="ti ti-robot text-xl text-gold" aria-hidden />
-              </div>
-              <div>
-                <div className="flex items-center gap-1.5 font-semibold text-navy">
-                  {t("chat.title")}
-                  <i className="ti ti-sparkles text-sm text-gold" aria-hidden />
+          <div className="relative flex-1 space-y-4 overflow-y-auto p-4 lg:p-6">
+            {/* Guide intro */}
+            <div className="anim-rise overflow-hidden rounded-2xl border border-line bg-white">
+              <div className="lanna-strip h-2.5 bg-navy" />
+              <div className="flex items-start gap-3 p-4 lg:p-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy ring-2 ring-gold ring-offset-2 ring-offset-white lg:h-12 lg:w-12">
+                  <i className="ti ti-robot text-xl text-gold lg:text-2xl" aria-hidden />
                 </div>
-                <p className="mt-0.5 text-sm leading-relaxed text-ink">{t("chat.greeting")}</p>
+                <div>
+                  <div className="flex items-center gap-1.5 text-base font-semibold text-navy lg:text-lg">
+                    {t("chat.title")}
+                    <i className="ti ti-sparkles text-sm text-gold" aria-hidden />
+                  </div>
+                  <p className="mt-0.5 text-sm leading-relaxed text-ink lg:text-[15px]">{t("chat.greeting")}</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {messages.map((m, i) =>
-            m.from === "user" ? (
-              <div key={i} className="anim-rise flex justify-end">
-                <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-navy px-3.5 py-2 text-sm text-cream">
-                  {m.text}
-                </div>
-              </div>
-            ) : (
-              <AiBubble key={i}>
-                <p className="whitespace-pre-wrap break-words text-sm leading-relaxed">{m.text}</p>
-                {m.places.length > 0 && (
-                  <div className="mt-2 flex flex-col gap-2">
-                    {m.places.map((p) => (
-                      <PlaceMini key={p.id} place={p} lang={lang as LangCode} />
-                    ))}
+            {messages.map((m, i) =>
+              m.from === "user" ? (
+                <div key={i} className="anim-rise flex justify-end">
+                  <div className="max-w-[82%] rounded-2xl rounded-tr-sm bg-navy px-4 py-2.5 text-sm text-cream lg:max-w-[62%] lg:text-[15px]">
+                    {m.text}
                   </div>
-                )}
-                {m.itinerary && (
-                  <Link
-                    href="/plan"
-                    className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-1.5 text-xs font-medium text-navy"
-                  >
-                    <i className="ti ti-route text-sm" aria-hidden />
-                    {t("plan.title")}
-                  </Link>
-                )}
-              </AiBubble>
-            )
-          )}
+                </div>
+              ) : (
+                <AiBubble key={i}>
+                  <p className="whitespace-pre-wrap break-words text-sm leading-relaxed">{m.text}</p>
+                  {m.places.length > 0 && (
+                    <div className="mt-2 flex flex-col gap-2">
+                      {m.places.map((p) => (
+                        <PlaceMini key={p.id} place={p} lang={lang as LangCode} />
+                      ))}
+                    </div>
+                  )}
+                  {m.itinerary && (
+                    <Link
+                      href="/plan"
+                      className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-1.5 text-xs font-medium text-navy"
+                    >
+                      <i className="ti ti-route text-sm" aria-hidden />
+                      {t("plan.title")}
+                    </Link>
+                  )}
+                </AiBubble>
+              )
+            )}
 
-          {typing && (
-            <AiBubble>
-              <span className="flex gap-1">
-                <Dot /> <Dot /> <Dot />
-              </span>
-            </AiBubble>
-          )}
-          <div ref={endRef} />
+            {typing && (
+              <AiBubble>
+                <span className="flex gap-1">
+                  <Dot /> <Dot /> <Dot />
+                </span>
+              </AiBubble>
+            )}
+            <div ref={endRef} />
           </div>
         </div>
 
         {/* Suggestions + input */}
-        <div className="sticky bottom-0 border-t border-line bg-cream px-4 pb-3 pt-2 lg:mb-6 lg:rounded-2xl lg:border lg:bg-white lg:px-4">
+        <div className="sticky bottom-0 mt-4 border-t border-line bg-cream px-4 pb-3 pt-2 lg:rounded-2xl lg:border lg:bg-white lg:px-4 lg:pb-4 lg:pt-3">
           {/* Faint Nan mountain horizon above the input */}
           <svg
             className="pointer-events-none absolute -top-5 left-0 h-5 w-full"
@@ -237,7 +237,7 @@ function ChatInner() {
                 <button
                   key={s}
                   onClick={() => send(s)}
-                  className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold bg-white px-3 py-1.5 text-xs text-gold-700 transition hover:bg-gold/10"
+                  className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold bg-white px-3 py-1.5 text-xs text-gold-700 transition hover:bg-gold/10 lg:px-4 lg:text-sm"
                 >
                   <i
                     className={`ti ${
@@ -255,18 +255,18 @@ function ChatInner() {
               e.preventDefault();
               send(input);
             }}
-            className="flex items-center gap-2 rounded-full border border-line bg-white py-1.5 pl-4 pr-1.5"
+            className="flex items-center gap-2 rounded-full border border-line bg-white py-1.5 pl-4 pr-1.5 lg:py-2 lg:pl-5 lg:pr-2"
           >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={t("chat.placeholder")}
-              className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted"
+              className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted lg:text-base"
             />
             <button
               type="submit"
               aria-label={t("common.send")}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-gold text-navy"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-gold text-navy lg:h-10 lg:w-10"
             >
               <i className="ti ti-send text-lg" aria-hidden />
             </button>
@@ -279,11 +279,11 @@ function ChatInner() {
 
 function AiBubble({ children }: { children: React.ReactNode }) {
   return (
-    <div className="anim-rise flex items-start gap-2">
-      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy ring-1 ring-gold/40">
-        <i className="ti ti-robot text-base text-gold" aria-hidden />
+    <div className="anim-rise flex items-start gap-2 lg:gap-3">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy ring-1 ring-gold/40 lg:h-9 lg:w-9">
+        <i className="ti ti-robot text-base text-gold lg:text-lg" aria-hidden />
       </div>
-      <div className="max-w-[82%] rounded-2xl rounded-tl-sm border border-line bg-white px-3.5 py-2 text-ink">
+      <div className="max-w-[88%] rounded-2xl rounded-tl-sm border border-line bg-white px-4 py-2.5 text-ink lg:max-w-[72%]">
         {children}
       </div>
     </div>
@@ -295,13 +295,13 @@ function PlaceMini({ place, lang }: { place: Place; lang: LangCode }) {
   return (
     <Link
       href={`/place/${place.id}`}
-      className="flex items-center gap-2.5 rounded-xl border border-line bg-cream p-2 transition hover:border-navy-300"
+      className="flex items-center gap-2.5 rounded-xl border border-line bg-cream p-2.5 transition hover:border-navy-300 lg:p-3"
     >
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style={{ backgroundColor: c.bg }}>
-        <i className={`ti ${place.icon} text-xl`} style={{ color: c.fg }} aria-hidden />
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg lg:h-11 lg:w-11" style={{ backgroundColor: c.bg }}>
+        <i className={`ti ${place.icon} text-xl lg:text-2xl`} style={{ color: c.fg }} aria-hidden />
       </div>
       <div className="min-w-0 flex-1">
-        <div className="truncate text-[13px] font-medium text-navy">{loc(place.name, lang)}</div>
+        <div className="truncate text-[13px] font-medium text-navy lg:text-sm">{loc(place.name, lang)}</div>
         <div className="flex items-center gap-1">
           <StarRating value={place.rating} size="text-[10px]" />
           <span className="text-[10px] text-muted">{districtLoc(place.district, lang)}</span>
