@@ -253,7 +253,7 @@ export default function MapPage() {
       <AppHeader title={t("nav.map")} showBack />
       <main className="flex flex-1 flex-col">
         <div className="lanna-subnav-surface border-b border-gold/20">
-          <div className="no-scrollbar flex w-full gap-2 overflow-x-auto px-4 py-2.5 pr-8 lg:px-8 lg:py-3 lg:pr-10">
+          <div className="no-scrollbar flex w-full justify-start gap-2 overflow-x-auto px-4 py-2.5 pr-8 lg:justify-center lg:px-8 lg:py-3 lg:pr-8">
             <button
               onClick={() => setCraft(null)}
               className={`lanna-subnav-link flex shrink-0 items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-medium lg:px-4 lg:text-sm ${

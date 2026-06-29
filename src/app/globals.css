@@ -128,22 +128,6 @@ body {
     repeat;
 }
 
-.lanna-mainnav-link[aria-current="page"] {
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='10' viewBox='0 0 36 10'%3E%3Cpath d='M0 5 H7 L9 2 L12 8 L15 2 L18 8 L21 2 L24 8 L27 2 L29 5 H36' fill='none' stroke='%231b2a4a' stroke-width='1.2'/%3E%3C/svg%3E"),
-    repeating-linear-gradient(
-      135deg,
-      rgba(27, 42, 74, 0.13) 0 1px,
-      transparent 1px 13px
-    );
-  background-position:
-    center 2px,
-    center;
-  background-repeat:
-    repeat-x,
-    repeat;
-}
-
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
