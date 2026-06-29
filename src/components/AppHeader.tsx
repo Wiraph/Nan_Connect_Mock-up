@@ -67,7 +67,8 @@ export default function AppHeader({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-full px-3 py-1.5 text-sm transition ${
+                  aria-current={active ? "page" : undefined}
+                  className={`lanna-mainnav-link rounded-full px-3 py-1.5 text-sm transition ${
                     active
                       ? "bg-gold text-navy"
                       : "text-cream/75 hover:bg-navy-600 hover:text-cream"
