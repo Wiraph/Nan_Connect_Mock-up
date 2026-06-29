@@ -58,6 +58,12 @@ body {
   background-position: center;
 }
 
+/* Soft gold Lanna diamond motif for light surfaces (chat background) */
+.lanna-soft {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46'%3E%3Cpath d='M23 7 L39 23 L23 39 L7 23 Z' fill='none' stroke='%23c9a227' stroke-width='1'/%3E%3Cpath d='M23 15 L31 23 L23 31 L15 23 Z' fill='none' stroke='%231b2a4a' stroke-width='0.8'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+}
+
 /* Faint Lanna diamond/kanok motif — hero watermark */
 .lanna-watermark {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 5 L43 24 L24 43 L5 24 Z' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Cpath d='M24 14 L34 24 L24 34 L14 24 Z' fill='none' stroke='%23c9a227' stroke-width='1'/%3E%3C/svg%3E");

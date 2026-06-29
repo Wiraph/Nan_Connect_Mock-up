@@ -94,15 +94,18 @@ const INTENT_PLACES: Record<Intent, string[]> = {
   default: ["wat-phumin", "bo-kluea", "doi-phu-kha"],
 };
 
+/** Curated place cards + itinerary flag for a query — reused alongside the
+ *  real AI text stream so cards still render even with a live model. */
+export function matchPlaces(query: string): { places: Place[]; itinerary: boolean } {
+  const intent = detectIntent(query);
+  return { places: pick(INTENT_PLACES[intent]), itinerary: intent === "route" };
+}
+
 export function getAIResponse(query: string, lang: LangCode): AIResult {
   const intent = detectIntent(query);
-  const r = REPLIES[intent];
-  const reply = loc(r, lang);
-  return {
-    reply,
-    places: pick(INTENT_PLACES[intent]),
-    itinerary: intent === "route",
-  };
+  const reply = loc(REPLIES[intent], lang);
+  const { places: matched, itinerary } = matchPlaces(query);
+  return { reply, places: matched, itinerary };
 }
 
 /** The default smart itinerary used by the /plan page. */
