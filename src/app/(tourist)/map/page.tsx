@@ -13,6 +13,9 @@ import StarRating from "@/components/StarRating";
 import { useI18n } from "@/i18n/I18nProvider";
 import { craftTypes, TINT_HEX } from "@/lib/data";
 import { useDataStore } from "@/lib/DataStore";
+import { usePlanStore } from "@/lib/PlanStore";
+import { ITINERARY } from "@/lib/mockAI";
+import { buildSchedule, minutesToHHMM } from "@/lib/planner";
 import { NAN_BOUNDARY } from "@/lib/nanBoundary";
 import { districtLoc, loc, Place } from "@/lib/types";
 
@@ -35,77 +38,6 @@ const WORLD_MASK: LatLngExpression[] = [
   [-85, -180],
 ];
 
-const KEY_PLACE_IDS = [
-  "wat-phra-that-chae-haeng",
-  "wat-phumin",
-  "doi-phu-kha",
-  "bo-kluea",
-  "sapan-village",
-  "doi-samer-dao",
-];
-
-const ROUTES = [
-  {
-    color: "#1f6feb",
-    dashArray: "8 8",
-    points: [
-      [18.7757, 100.7716],
-      [19.183, 100.9286],
-      [19.2058, 101.0769],
-      [19.0786, 101.1556],
-      [19.0492, 101.1281],
-    ] as LatLngExpression[],
-  },
-  {
-    color: "#e06b2f",
-    dashArray: "7 7",
-    points: [
-      [18.7757, 100.7716],
-      [18.5419, 100.7361],
-      [18.303664, 100.753968],
-    ] as LatLngExpression[],
-  },
-  {
-    color: "#8a55d7",
-    dashArray: "10 8",
-    points: [
-      [18.7757, 100.7716],
-      [19.1456, 100.8222],
-      [19.1786, 100.9133],
-      [19.1, 101.08],
-    ] as LatLngExpression[],
-  },
-];
-
-function copy(lang: string) {
-  const th = lang === "th";
-  return {
-    title: th ? "แผนที่จริงจังหวัดน่าน" : "Live Nan Map",
-    subtitle: th
-      ? "แสดงเฉพาะพื้นที่จังหวัดน่าน พร้อมเส้นทางและจุดท่องเที่ยวจากข้อมูลจริง"
-      : "Nan-only map view with real tiles, routes, and seeded POIs",
-    routes: th ? "เส้นทางแนะนำ" : "Suggested routes",
-    keyPlaces: th ? "แหล่งท่องเที่ยวสำคัญ" : "Key destinations",
-    boundary: th ? "ขอบเขตจังหวัดน่าน" : "Nan province boundary",
-    scanNetwork: th ? "จุดสแกน QR 150 จุด" : "150 QR scan points",
-    smartRoute: "Smart Tourism Route",
-    mapNote: th
-      ? "จำกัดการเลื่อนแผนที่ไว้เฉพาะโซนจังหวัดน่าน"
-      : "Panning is constrained around Nan province",
-    routeItems: th
-      ? [
-          ["เมืองน่าน - ปัว - บ่อเกลือ - สะปัน", "เส้นทางชุมชนและธรรมชาติ"],
-          ["เมืองน่าน - นาน้อย", "ดอยเสมอดาวและเสาดิน"],
-          ["เมืองน่าน - ท่าวังผา - ปัว", "วัด งานคราฟ และผ้าทอ"],
-        ]
-      : [
-          ["Nan city - Pua - Bo Kluea - Sapan", "Community and nature route"],
-          ["Nan city - Na Noi", "Doi Samer Dao and earth pillars"],
-          ["Nan city - Tha Wang Pha - Pua", "Temples, crafts, and weaving"],
-        ],
-  };
-}
-
 function markerHtml(place: Place, active: boolean) {
   const tint = TINT_HEX[place.tint] ?? TINT_HEX.navy;
   return `
@@ -118,6 +50,7 @@ function markerHtml(place: Place, active: boolean) {
 export default function MapPage() {
   const { t, lang } = useI18n();
   const { places } = useDataStore();
+  const { placeIds } = usePlanStore();
   const [craft, setCraft] = useState<string | null>(null);
   const [selected, setSelected] = useState<string | null>("wat-phumin");
   const [mapReady, setMapReady] = useState(false);
@@ -125,20 +58,46 @@ export default function MapPage() {
   const leafletRef = useRef<LeafletModule | null>(null);
   const mapRef = useRef<LeafletMap | null>(null);
   const markerLayerRef = useRef<LayerGroup | null>(null);
+  const routeLayerRef = useRef<LayerGroup | null>(null);
 
-  const c = copy(lang);
+  const c = {
+    title: t("map.title"),
+    subtitle: t("map.subtitle"),
+    keyPlaces: t("map.keyPlaces"),
+    boundary: t("map.boundary"),
+    scanNetwork: t("map.scanNetwork"),
+    smartRoute: t("map.smartRoute"),
+    mapNote: t("map.mapNote"),
+  };
   const choosePlace = useCallback((id: string) => setSelected(id), []);
 
   const visible = useMemo(
     () => (craft ? places.filter((p) => p.craftType === craft) : places),
     [craft, places]
   );
+
+  // The designed route from the plan store (falls back to the sample itinerary).
+  const planEmpty = placeIds.length === 0;
+  const planIds = useMemo(
+    () => (placeIds.length ? placeIds : ITINERARY.map((it) => it.id)),
+    [placeIds]
+  );
+  const planStops = useMemo(
+    () => buildSchedule(planIds, places, {}),
+    [planIds, places]
+  );
+  const planKey = planStops.map((s) => s.place.id).join(",");
+
+  const keyPlaces = useMemo(
+    () => [...places].sort((a, b) => b.rating - a.rating).slice(0, 6),
+    [places]
+  );
+
   const selectedPlace = places.find((p) => p.id === selected);
   const activePlace =
     selectedPlace && visible.some((p) => p.id === selectedPlace.id)
       ? selectedPlace
       : visible[0] ?? selectedPlace;
-  const keyPlaces = places.filter((p) => KEY_PLACE_IDS.includes(p.id));
 
   useEffect(() => {
     if (!mapElRef.current || mapRef.current) return;
@@ -181,16 +140,7 @@ export default function MapPage() {
         interactive: false,
       }).addTo(map);
 
-      ROUTES.forEach((route) => {
-        L.polyline(route.points, {
-          color: route.color,
-          dashArray: route.dashArray,
-          opacity: 0.86,
-          weight: 4,
-          interactive: false,
-        }).addTo(map);
-      });
-
+      routeLayerRef.current = L.layerGroup().addTo(map);
       markerLayerRef.current = L.layerGroup().addTo(map);
       L.control.zoom({ position: "bottomright" }).addTo(map);
       L.control.scale({ imperial: false, metric: true, position: "bottomleft" }).addTo(map);
@@ -206,10 +156,44 @@ export default function MapPage() {
       mapRef.current?.remove();
       mapRef.current = null;
       markerLayerRef.current = null;
+      routeLayerRef.current = null;
       leafletRef.current = null;
       setMapReady(false);
     };
   }, []);
+
+  // Draw the designed route — a single polyline through the plan stops in order,
+  // with numbered badges. Redraws whenever the plan changes.
+  useEffect(() => {
+    const L = leafletRef.current;
+    const layer = routeLayerRef.current;
+    if (!mapReady || !L || !layer) return;
+
+    layer.clearLayers();
+    const points = planStops.map(
+      (s) => [s.place.lat, s.place.lon] as LatLngExpression
+    );
+    if (points.length >= 2) {
+      L.polyline(points, {
+        color: "#1b2a4a",
+        weight: 4,
+        opacity: 0.85,
+        interactive: false,
+      }).addTo(layer);
+    }
+    planStops.forEach((s, i) => {
+      L.marker([s.place.lat, s.place.lon], {
+        icon: L.divIcon({
+          className: "nan-route-badge-wrapper",
+          html: `<span style="display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:9999px;background:#1b2a4a;color:#e0b24a;font-size:11px;font-weight:700;border:2px solid #fffaf0;box-shadow:0 1px 3px rgba(0,0,0,.3)">${i + 1}</span>`,
+          iconSize: [22, 22],
+          iconAnchor: [11, 11],
+        }),
+        interactive: false,
+        zIndexOffset: 1000,
+      }).addTo(layer);
+    });
+  }, [mapReady, planKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const L = leafletRef.current;
@@ -309,20 +293,35 @@ export default function MapPage() {
             </div>
 
             <div className="mt-4">
-              <div className="mb-2 text-sm font-semibold text-navy">{c.routes}</div>
+              <div className="mb-2 flex items-center justify-between">
+                <div className="text-sm font-semibold text-navy">{t("plan.yourRoute")}</div>
+                <Link href="/plan" className="inline-flex items-center gap-1 text-[11px] font-medium text-gold-700 hover:underline">
+                  <i className="ti ti-edit text-xs" aria-hidden /> {t("plan.editPlan")}
+                </Link>
+              </div>
+              {planEmpty && <div className="mb-2 text-[11px] text-muted">{t("plan.sampleRoute")}</div>}
               <div className="flex flex-col gap-2">
-                {c.routeItems.map((route, index) => (
-                  <div key={route[0]} className="flex gap-2 rounded-xl border border-line bg-cream/60 p-2">
-                    <span
-                      className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${
-                        ["bg-blue-600", "bg-orange-500", "bg-purple-600"][index]
-                      }`}
-                    />
-                    <div>
-                      <div className="text-xs font-semibold text-navy">{route[0]}</div>
-                      <div className="text-[11px] text-muted">{route[1]}</div>
-                    </div>
-                  </div>
+                {planStops.map((s, index) => (
+                  <button
+                    key={s.place.id}
+                    onClick={() => choosePlace(s.place.id)}
+                    className={`flex w-full items-center gap-2 rounded-xl border p-2 text-left transition ${
+                      activePlace?.id === s.place.id
+                        ? "border-gold bg-cream"
+                        : "border-line bg-cream/60 hover:border-gold/60"
+                    }`}
+                  >
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy text-[10px] font-bold text-gold">
+                      {index + 1}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-xs font-semibold text-navy">{loc(s.place.name, lang)}</span>
+                      <span className="block truncate text-[11px] text-muted">
+                        {minutesToHHMM(s.arrivalMin)}
+                        {index > 0 ? ` · ${s.legKm.toFixed(1)} ${t("plan.km")}` : ""}
+                      </span>
+                    </span>
+                  </button>
                 ))}
               </div>
             </div>

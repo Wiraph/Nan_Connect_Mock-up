@@ -6,10 +6,13 @@ import { useSearchParams } from "next/navigation";
 import AppHeader from "@/components/AppHeader";
 import StarRating from "@/components/StarRating";
 import { useI18n } from "@/i18n/I18nProvider";
+import { useDataStore } from "@/lib/DataStore";
+import { usePlanStore } from "@/lib/PlanStore";
 import { getAIResponse, matchPlaces } from "@/lib/mockAI";
 import { TINT_HEX } from "@/lib/data";
 import { Place, districtLoc, loc } from "@/lib/types";
 import { LangCode } from "@/i18n/dictionaries";
+import { orderRoute } from "@/lib/planner";
 
 type Msg =
   | { from: "user"; text: string }
@@ -17,6 +20,8 @@ type Msg =
 
 function ChatInner() {
   const { t, lang, ready } = useI18n();
+  const { places } = useDataStore();
+  const { setPlan } = usePlanStore();
   const sp = useSearchParams();
   const initial = sp.get("q") ?? "";
   const [messages, setMessages] = useState<Msg[]>([]);
@@ -44,8 +49,15 @@ function ChatInner() {
       setTyping(true);
 
       const cards = matchPlaces(text);
+      const applyPlan = (matched: Place[]) => {
+        const ids = matched.map((p) => p.id);
+        if (ids.length) setPlan(orderRoute(ids, places));
+      };
+      if (cards.itinerary) applyPlan(cards.places);
+
       const runMockFallback = () => {
         const res = getAIResponse(text, lang as LangCode);
+        if (res.itinerary) applyPlan(res.places);
         setMessages((m) => [
           ...m,
           { from: "ai", text: res.reply, places: res.places, itinerary: res.itinerary },
@@ -132,7 +144,7 @@ function ChatInner() {
         runMockFallback();
       }
     },
-    [messages, lang]
+    [messages, lang, places, setPlan]
   );
 
   useEffect(() => {
@@ -195,6 +207,10 @@ function ChatInner() {
                   {m.itinerary && (
                     <Link
                       href="/plan"
+                      onClick={() => {
+                        const ids = m.places.map((p) => p.id);
+                        if (ids.length) setPlan(orderRoute(ids, places));
+                      }}
                       className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-1.5 text-xs font-medium text-navy"
                     >
                       <i className="ti ti-route text-sm" aria-hidden />
