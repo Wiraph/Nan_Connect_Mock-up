@@ -167,7 +167,6 @@ function ChatInner() {
       <AppHeader title={t("chat.title")} showBack />
       <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 pb-6 pt-4 lg:px-8 lg:pt-6">
         <div className="plan-lanna-hero relative flex min-h-[calc(100dvh-190px)] flex-1 flex-col overflow-hidden rounded-2xl border border-gold/25 bg-cream/70 lg:min-h-[620px]">
-          <div className="lanna-strip h-2 bg-navy" />
           {/* Lanna textile backdrop */}
           <div className="lanna-soft pointer-events-none absolute inset-0 opacity-[0.08]" aria-hidden />
           <div className="relative flex-1 space-y-4 overflow-y-auto p-4 lg:p-6">
