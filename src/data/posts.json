@@ -1,0 +1,126 @@
+[
+  {
+    "id": "about-sue-no-sato",
+    "category": "about",
+    "title": { "th": "Sue no Sato (陶の郷)", "en": "Sue no Sato (陶の郷)" },
+    "detail": {
+      "th": "ประวัติของเครื่องปั้นดินเผาตันบะ (丹波焼の歴史): เรื่องราวของ 1 ใน 6 เตาเผาที่เก่าแก่ที่สุดของญี่ปุ่นที่มีอายุกว่า 800 ปี และเอกลักษณ์ของงานปั้นในแต่ละยุคสมัย",
+      "en": "History of Tamba ware (丹波焼の歴史): the story of one of Japan's six oldest kilns, over 800 years old, and the character of its pottery through the eras."
+    },
+    "image": "/posts-img/Picture1.png",
+    "craftType": "pottery",
+    "source": {
+      "th": "รู้จัก \"Sue no Sato\" (陶の郷について): ข้อมูลพื้นฐานของสวนหัตถกรรมที่เป็นศูนย์กลางการท่องเที่ยว",
+      "en": "About Sue no Sato (陶の郷について): basic information on the craft park at the heart of the visit."
+    },
+    "directory": {
+      "th": "ทำเนียบเตาเผา (窯元案内): ข้อมูลและแผนที่ของเตาเผา (Kilns) กว่า 60 แห่งในหมู่บ้าน เพื่อให้นักท่องเที่ยวสามารถเดินชมตามสตูดิโอต่าง ๆ ได้",
+      "en": "Kiln directory (窯元案内): info and a map of 60+ kilns in the village so visitors can tour the studios."
+    }
+  },
+  {
+    "id": "exp-hand-building",
+    "category": "experiences",
+    "title": { "th": "ห้องเรียนเซรามิก (陶芸教室)", "en": "Ceramics class (陶芸教室)" },
+    "detail": { "th": "การปั้นด้วยมือ (Hand-building)", "en": "Hand-building" },
+    "image": "/posts-img/Picture2.png"
+  },
+  {
+    "id": "exp-pottery-wheel",
+    "category": "experiences",
+    "title": { "th": "ห้องเรียนเซรามิก (陶芸教室)", "en": "Ceramics class (陶芸教室)" },
+    "detail": { "th": "การใช้แป้นหมุน (Electric Pottery Wheel)", "en": "Electric pottery wheel" }
+  },
+  {
+    "id": "exp-painting",
+    "category": "experiences",
+    "title": { "th": "ห้องเรียนเซรามิก (陶芸教室)", "en": "Ceramics class (陶芸教室)" },
+    "detail": { "th": "การวาดลวดลายบนภาชนะ (Painting/Overglaze)", "en": "Painting / Overglaze" }
+  },
+  {
+    "id": "shop-yokocho",
+    "category": "shopping",
+    "title": { "th": "ตรอกร้านค้าเตาเผา (窯元販売所 / Yokocho)", "en": "Kiln sales alley (窯元販売所 / Yokocho)" },
+    "detail": {
+      "th": "พื้นที่รวบรวมผลงานจากเตาเผาทุกแห่งในหมู่บ้านมาวางจำหน่ายในที่เดียว",
+      "en": "A space gathering works from every kiln in the village for sale in one place."
+    },
+    "image": "/posts-img/Picture3-1.png"
+  },
+  {
+    "id": "shop-exhibition",
+    "category": "shopping",
+    "title": { "th": "นิทรรศการและพิพิธภัณฑ์", "en": "Exhibitions & museum" },
+    "detail": {
+      "th": "ข้อมูลการจัดแสดงผลงานเครื่องปั้นดินเผาทั้งแบบโบราณและร่วมสมัย รวมถึงความร่วมมือกับพิพิธภัณฑ์ศิลปะเซรามิกเฮียวโกะ (The Museum of Ceramic Art, Hyogo)",
+      "en": "Displays of both ancient and contemporary pottery, including a collaboration with The Museum of Ceramic Art, Hyogo."
+    },
+    "image": "/posts-img/Picture3-2.png"
+  },
+  {
+    "id": "visit-facilities",
+    "category": "visit",
+    "title": { "th": "ข้อมูลการอำนวยความสะดวก (施設案内)", "en": "Facility information (施設案内)" },
+    "detail": { "th": "ค่าเข้าชมและเวลาทำการ", "en": "Admission and opening hours" },
+    "image": "/posts-img/Picture4-1.png",
+    "contact": "079-597-2034",
+    "price": { "th": "ผู้ใหญ่ 200 เยน · กลุ่ม 160 เยน · เด็ก 50 เยน", "en": "Adult ¥200 · Group ¥160 · Child ¥50" }
+  },
+  {
+    "id": "visit-restaurant",
+    "category": "visit",
+    "title": { "th": "ข้อมูลการอำนวยความสะดวก (施設案内)", "en": "Facility information (施設案内)" },
+    "detail": {
+      "th": "ร้านอาหารและคาเฟ่ (เช่น ร้าน獅子銀 - Shishigin ที่ใช้ภาชนะตันบะเสิร์ฟอาหาร)",
+      "en": "Restaurants & cafes (e.g. Shishigin 獅子銀, serving food in Tamba ware)."
+    }
+  },
+  {
+    "id": "visit-stay",
+    "category": "visit",
+    "title": { "th": "ข้อมูลการอำนวยความสะดวก (施設案内)", "en": "Facility information (施設案内)" },
+    "detail": { "th": "ที่พัก โรงแรม", "en": "Accommodation & hotels" }
+  },
+  {
+    "id": "visit-access",
+    "category": "visit",
+    "title": { "th": "การเดินทาง (Access)", "en": "Access" },
+    "detail": {
+      "th": "วิธีการเดินทางโดยรถไฟ รถบัส หรือรถยนต์ส่วนตัวจากเมืองหลักอย่างโอซาก้าหรือโกเบ",
+      "en": "How to get there by train, bus, or private car from major cities like Osaka or Kobe."
+    },
+    "image": "/posts-img/Picture4-2.png",
+    "lat": 35.0667,
+    "lon": 135.2197
+  },
+  {
+    "id": "visit-tour",
+    "category": "visit",
+    "title": { "th": "ข้อมูลทัวร์ (Tour Information)", "en": "Tour information" },
+    "detail": {
+      "th": "โปรแกรมแนะนำสำหรับการท่องเที่ยวเป็นหมู่คณะหรือทัวร์เชิงวัฒนธรรม",
+      "en": "Recommended programs for group travel or cultural tours."
+    },
+    "image": "/posts-img/Picture4-3.png"
+  },
+  {
+    "id": "news-announcement",
+    "category": "news",
+    "title": { "th": "ประกาศและข่าวสาร (お知らせ)", "en": "Announcements (お知らせ)" },
+    "detail": {
+      "th": "ข้อมูลวันหยุดชั่วคราว หรือประกาศสำคัญจากทางศูนย์",
+      "en": "Temporary closures and important notices from the center."
+    }
+  },
+  {
+    "id": "news-festival",
+    "category": "news",
+    "title": { "th": "เทศกาลเครื่องปั้นดินเผา (Event / Matsuri)", "en": "Pottery festival (Event / Matsuri)" },
+    "detail": {
+      "th": "ข้อมูลกิจกรรมใหญ่ประจำปี เช่น \"Tamba Ware Pottery Festival\" ในเดือนตุลาคม",
+      "en": "The big annual events such as the Tamba Ware Pottery Festival in October."
+    },
+    "image": "/posts-img/Picture5.png",
+    "month": "ต.ค."
+  }
+]

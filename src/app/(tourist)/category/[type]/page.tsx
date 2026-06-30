@@ -7,7 +7,7 @@ import PlaceCard from "@/components/PlaceCard";
 import BusinessCard from "@/components/BusinessCard";
 import { useI18n } from "@/i18n/I18nProvider";
 import { useDataStore } from "@/lib/DataStore";
-import { getCategory } from "@/lib/data";
+import { getCategory, getContentCategory, placesForContent } from "@/lib/data";
 import { loc } from "@/lib/types";
 
 const CRAFT_MAP: Record<string, string[]> = {
@@ -28,16 +28,20 @@ export default function CategoryPage({
   const { places, businessesForCategory } = useDataStore();
   const [q, setQ] = useState("");
   const [limit, setLimit] = useState(20);
+
+  const contentCat = getContentCategory(type);
   const cat = getCategory(type);
 
-  const biz = useMemo(() => businessesForCategory(type), [type, businessesForCategory]);
-  const placeItems = useMemo(
-    () =>
-      type === "attraction"
-        ? places
-        : places.filter((p) => (CRAFT_MAP[type] ?? []).includes(p.craftType)),
-    [type, places]
+  const biz = useMemo(
+    () => (contentCat ? [] : businessesForCategory(type)),
+    [type, contentCat, businessesForCategory]
   );
+  const placeItems = useMemo(() => {
+    if (contentCat) return placesForContent(places, type);
+    return type === "attraction"
+      ? places
+      : places.filter((p) => (CRAFT_MAP[type] ?? []).includes(p.craftType));
+  }, [type, contentCat, places]);
 
   const filteredBiz = useMemo(
     () =>
@@ -49,16 +53,19 @@ export default function CategoryPage({
     [biz, q]
   );
 
-  if (!cat) return notFound();
+  if (!cat && !contentCat) return notFound();
+
+  const title = contentCat ? t(contentCat.labelKey) : loc(cat!.name, lang);
+  const icon = contentCat ? contentCat.icon : cat!.icon;
 
   return (
     <>
-      <AppHeader title={loc(cat.name, lang)} showBack />
+      <AppHeader title={title} showBack />
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 pb-8 pt-4 lg:px-8 lg:pt-6">
         <div className="mb-4 flex items-center gap-3 rounded-xl bg-navy px-4 py-3 text-cream">
-          <i className={`ti ${cat.icon} text-2xl text-gold`} aria-hidden />
+          <i className={`ti ${icon} text-2xl text-gold`} aria-hidden />
           <div>
-            <div className="font-semibold">{loc(cat.name, lang)}</div>
+            <div className="font-semibold">{title}</div>
             <div className="text-xs text-cream/70">
               {(biz.length || placeItems.length).toLocaleString()} {t("common.viewAll").toLowerCase()}
             </div>
@@ -77,7 +84,7 @@ export default function CategoryPage({
           </div>
         )}
 
-        {/* Place items (attractions / craft-mapped) */}
+        {/* Place items (attractions / craft-mapped / content categories) */}
         {placeItems.length > 0 && biz.length === 0 && (
           <div className="grid gap-3 lg:grid-cols-2 xl:grid-cols-3">
             {placeItems.map((p) => (
@@ -108,7 +115,7 @@ export default function CategoryPage({
         {placeItems.length === 0 && biz.length === 0 && (
           <div className="flex flex-col items-center gap-2 py-16 text-center text-muted">
             <i className="ti ti-database-off text-4xl" aria-hidden />
-            <p className="text-sm">{loc(cat.name, lang)}</p>
+            <p className="text-sm">{title}</p>
           </div>
         )}
       </main>

@@ -5,6 +5,7 @@ import "./globals.css";
 import { I18nProvider } from "@/i18n/I18nProvider";
 import { DataStoreProvider } from "@/lib/DataStore";
 import { PlanStoreProvider } from "@/lib/PlanStore";
+import { PostStoreProvider } from "@/lib/PostStore";
 
 const notoThai = Noto_Sans_Thai({
   variable: "--font-noto-thai",
@@ -39,7 +40,9 @@ export default function RootLayout({
       <body className="min-h-dvh antialiased">
         <I18nProvider>
           <DataStoreProvider>
-            <PlanStoreProvider>{children}</PlanStoreProvider>
+            <PlanStoreProvider>
+              <PostStoreProvider>{children}</PostStoreProvider>
+            </PlanStoreProvider>
           </DataStoreProvider>
         </I18nProvider>
       </body>

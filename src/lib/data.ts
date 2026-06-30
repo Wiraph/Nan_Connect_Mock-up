@@ -31,6 +31,43 @@ export function getCategory(key: string): Category | undefined {
   return categories.find((c) => c.key === key);
 }
 
+/** The 5 content categories from the dataset (per-place info facets), used as
+ *  the home-page browse buckets. `labelKey` points at an i18n dictionary key
+ *  so every language is covered. */
+export type ContentCategory = {
+  key: string;
+  icon: string;
+  tint: string;
+  labelKey: string;
+};
+
+export const contentCategories: ContentCategory[] = [
+  { key: "about", icon: "ti-book-2", tint: "navy", labelKey: "place.about" },
+  { key: "experiences", icon: "ti-compass", tint: "teal", labelKey: "place.experiences" },
+  { key: "shopping", icon: "ti-shopping-bag", tint: "gold", labelKey: "place.shopping" },
+  { key: "visit", icon: "ti-info-circle", tint: "blue", labelKey: "place.visit" },
+  { key: "news", icon: "ti-calendar-event", tint: "coral", labelKey: "place.news" },
+];
+
+export function getContentCategory(key: string): ContentCategory | undefined {
+  return contentCategories.find((c) => c.key === key);
+}
+
+/** Places relevant to a content category — those that actually have data for
+ *  that facet. `about`/`visit` apply to every place. */
+export function placesForContent(list: Place[], key: string): Place[] {
+  switch (key) {
+    case "experiences":
+      return list.filter((p) => p.experiences.length > 0);
+    case "shopping":
+      return list.filter((p) => p.shopping.length > 0);
+    case "news":
+      return list.filter((p) => p.news.length > 0);
+    default:
+      return list;
+  }
+}
+
 /** All accommodation-type businesses (hotels + community operators). */
 export const businessesByCategory: Record<string, Business[]> = {
   accommodation: [...hotels, ...operators],

@@ -176,6 +176,23 @@ export default function PlacePage({
 
         {/* Visit & services */}
         <Section icon="ti-info-circle" title={t("place.visit")}>
+          {place.visit.services && place.visit.services.length > 0 && (
+            <div className="mb-3 flex flex-col gap-2">
+              {place.visit.services.map((s, i) => (
+                <div key={i} className="rounded-xl border border-line bg-white p-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="font-medium text-navy">{loc(s.title, lang)}</div>
+                    {s.price && loc(s.price, lang) && (
+                      <span className="shrink-0 rounded-full bg-cream-200 px-2 py-0.5 text-[11px] font-medium text-gold-700">
+                        {loc(s.price, lang)}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-[12.5px] text-muted">{loc(s.detail, lang)}</p>
+                </div>
+              ))}
+            </div>
+          )}
           <div className="overflow-hidden rounded-xl border border-line bg-white">
             <InfoRow icon="ti-clock" label={t("place.openingHours")} value={loc(place.visit.hours, lang)} />
             <InfoRow icon="ti-ticket" label={t("place.admission")} value={loc(place.visit.admission, lang)} />

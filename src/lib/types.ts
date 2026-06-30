@@ -75,6 +75,12 @@ export type Place = {
     price?: { th: string; en: string };
     /** หมวด 4: รถเช่า */
     rentalCar?: { th: string; en: string };
+    /** หมวด 4: รายการบริการแบบการ์ด (ประเภทบริการ + รายละเอียด) */
+    services?: {
+      title: { th: string; en: string };
+      detail: { th: string; en: string };
+      price?: { th: string; en: string };
+    }[];
   };
   news: {
     title: { th: string; en: string };

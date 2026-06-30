@@ -4,10 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAdminAuth } from "@/lib/adminAuth";
 import { useDataStore } from "@/lib/DataStore";
+import { usePostStore } from "@/lib/PostStore";
 
 const tabs = [
   { href: "/admin", icon: "ti-layout-dashboard", label: "ภาพรวม" },
   { href: "/admin/places", icon: "ti-map-pin", label: "สถานที่" },
+  { href: "/admin/posts", icon: "ti-article", label: "โพสต์" },
   { href: "/admin/businesses", icon: "ti-building-store", label: "ผู้ประกอบการ" },
 ];
 
@@ -15,6 +17,7 @@ export default function AdminNav() {
   const pathname = usePathname();
   const { user, logout } = useAdminAuth();
   const { resetAll } = useDataStore();
+  const { resetPosts } = usePostStore();
 
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-navy text-cream">
@@ -60,7 +63,7 @@ export default function AdminNav() {
         })}
         <button
           onClick={() => {
-            if (confirm("รีเซ็ตข้อมูลที่เพิ่ม/แก้ทั้งหมด กลับเป็นค่าตั้งต้น?")) resetAll();
+            if (confirm("รีเซ็ตข้อมูลที่เพิ่ม/แก้ทั้งหมด กลับเป็นค่าตั้งต้น?")) { resetAll(); resetPosts(); }
           }}
           className="lanna-subnav-link ml-auto flex shrink-0 items-center gap-1 px-3 py-2.5 text-xs text-cream/60 hover:bg-navy-600/35 hover:text-cream"
         >

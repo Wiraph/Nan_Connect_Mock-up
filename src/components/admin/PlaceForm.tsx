@@ -191,6 +191,26 @@ export default function PlaceForm({ initial }: { initial?: Place }) {
           <Field label="การเดินทาง (ไทย)"><input className={cx} value={p.visit.howToGet.th} onChange={(e) => set({ visit: { ...p.visit, howToGet: { ...p.visit.howToGet, th: e.target.value } } })} /></Field>
           <Field label="การเดินทาง (อังกฤษ)"><input className={cx} value={p.visit.howToGet.en} onChange={(e) => set({ visit: { ...p.visit, howToGet: { ...p.visit.howToGet, en: e.target.value } } })} /></Field>
         </Row>
+        <Field label="รายการบริการ (การ์ด: ประเภทบริการ + รายละเอียด)">
+          <ListEditor
+            items={p.visit.services ?? []}
+            onChange={(services) => set({ visit: { ...p.visit, services } })}
+            empty={{ title: { th: "", en: "" }, detail: { th: "", en: "" } }}
+            render={(it, upd) => (
+              <>
+                <Row>
+                  <input className={cx} placeholder="ประเภทบริการ (ไทย)" value={it.title.th} onChange={(e) => upd({ title: { ...it.title, th: e.target.value } })} />
+                  <input className={cx} placeholder="ประเภทบริการ (อังกฤษ)" value={it.title.en} onChange={(e) => upd({ title: { ...it.title, en: e.target.value } })} />
+                </Row>
+                <Row>
+                  <input className={cx} placeholder="รายละเอียด (ไทย)" value={it.detail.th} onChange={(e) => upd({ detail: { ...it.detail, th: e.target.value } })} />
+                  <input className={cx} placeholder="รายละเอียด (อังกฤษ)" value={it.detail.en} onChange={(e) => upd({ detail: { ...it.detail, en: e.target.value } })} />
+                </Row>
+                <input className={cx} placeholder="ราคา (เช่น 200 บาท)" value={it.price?.th ?? ""} onChange={(e) => upd({ price: { th: e.target.value, en: e.target.value } })} />
+              </>
+            )}
+          />
+        </Field>
         <Row>
           <Field label="ละติจูด (lat)"><input type="number" step="0.0001" className={cx} value={p.lat} onChange={(e) => set({ lat: parseFloat(e.target.value) || 0 })} /></Field>
           <Field label="ลองจิจูด (lon)"><input type="number" step="0.0001" className={cx} value={p.lon} onChange={(e) => set({ lon: parseFloat(e.target.value) || 0 })} /></Field>

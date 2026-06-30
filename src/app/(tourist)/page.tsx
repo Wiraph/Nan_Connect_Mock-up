@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import AppHeader from "@/components/AppHeader";
 import PlaceCard from "@/components/PlaceCard";
 import { useI18n } from "@/i18n/I18nProvider";
-import { categories, craftTypes } from "@/lib/data";
+import { contentCategories, craftTypes } from "@/lib/data";
 import { useDataStore } from "@/lib/DataStore";
 import { loc, textLoc } from "@/lib/types";
 
@@ -170,15 +170,15 @@ export default function Home() {
         {/* Categories */}
         <section className="mx-auto w-full max-w-7xl px-4 pt-5 lg:px-8 lg:pt-8">
           <SectionTitle>{t("home.categories")}</SectionTitle>
-          <div className="stagger mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-7 lg:gap-3">
-            {categories.map((c) => (
+          <div className="stagger mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-3">
+            {contentCategories.map((c) => (
               <Link
                 key={c.key}
-                href={`/category/${c.key}`}
+                href={`/posts/${c.key}`}
                 className="hover-lift flex min-h-20 flex-col items-center justify-center gap-1.5 rounded-xl border border-line bg-white py-3 text-center hover:border-navy-300 lg:min-h-24"
               >
                 <i className={`ti ${c.icon} text-2xl text-navy`} aria-hidden />
-                <span className="px-1 text-[11px] leading-tight text-ink lg:text-xs">{loc(c.name, lang)}</span>
+                <span className="px-1 text-[11px] leading-tight text-ink lg:text-xs">{t(c.labelKey)}</span>
               </Link>
             ))}
           </div>
