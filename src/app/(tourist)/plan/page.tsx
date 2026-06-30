@@ -491,7 +491,7 @@ function PlanStop({
         </a>
       )}
 
-      <div className="relative flex gap-3 lg:gap-4">
+      <div className="relative flex items-center gap-3 lg:gap-4">
         <div className="z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-cream bg-navy text-[11px] font-semibold text-gold lg:h-11 lg:w-11 lg:text-sm">
           {index + 1}
         </div>

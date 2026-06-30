@@ -213,6 +213,32 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <footer className="border-t border-gold/25 bg-navy text-cream">
+        <div className="lanna-strip h-2 bg-navy" />
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+          <div>
+            <div className="font-lanna text-lg text-gold">Nan Connect</div>
+            <p className="mt-1 max-w-xl text-xs leading-relaxed text-cream/70 lg:text-sm">
+              {heroText(
+                "แพลตฟอร์มท่องเที่ยวน่านอัจฉริยะ เชื่อมโยงสถานที่ ชุมชน และผู้เดินทาง",
+                "Smart Nan tourism platform connecting places, communities, and travellers"
+              )}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 text-xs">
+            <Link href="/chat" className="rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
+              {t("common.askAI")}
+            </Link>
+            <Link href="/plan" className="rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
+              {t("common.planRoute")}
+            </Link>
+            <Link href="/map" className="rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
+              {t("nav.map")}
+            </Link>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

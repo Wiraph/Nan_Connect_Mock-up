@@ -129,17 +129,19 @@ body {
 }
 
 .plan-timeline-line {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='86' viewBox='0 0 18 86'%3E%3Cpath d='M9 0 V86' stroke='%23cbbf9e' stroke-width='1.7' stroke-linecap='round'/%3E%3Cpath d='M9 15 C5 17 4 21 6 24 C7.5 26.2 9 27.4 9 30 M9 47 C13 49 14 53 12 56 C10.5 58.2 9 59.4 9 62' fill='none' stroke='%23c9a227' stroke-width='1.05' stroke-linecap='round' opacity='.72'/%3E%3Cpath d='M9 27 C12 28 14 31 13 35 M9 59 C6 60 4 63 5 67' fill='none' stroke='%238f2f22' stroke-width='.85' stroke-linecap='round' opacity='.42'/%3E%3Ccircle cx='9' cy='9' r='1.35' fill='%23c9a227' opacity='.85'/%3E%3Ccircle cx='9' cy='43' r='1.35' fill='%23c9a227' opacity='.85'/%3E%3Ccircle cx='9' cy='77' r='1.35' fill='%23c9a227' opacity='.85'/%3E%3C/svg%3E");
-  background-position: center top;
-  background-repeat: repeat-y;
-  background-size: 18px 86px;
-  bottom: 2.1rem;
-  left: 9px;
-  opacity: 0.95;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(201, 162, 39, 0.85) 0 6px,
+    transparent 6px 12px
+  );
+  border-radius: 2px;
+  bottom: 2.6rem;
+  left: 25px;
+  opacity: 0.9;
   pointer-events: none;
   position: absolute;
-  top: 1.9rem;
-  width: 18px;
+  top: 2.6rem;
+  width: 2px;
 }
 
 .plan-lanna-hero {
@@ -215,7 +217,7 @@ body {
 
 @media (min-width: 1024px) {
   .plan-timeline-line {
-    left: 15px;
+    left: 37px;
   }
 }
 
