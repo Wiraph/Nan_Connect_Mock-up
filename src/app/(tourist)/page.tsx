@@ -35,8 +35,8 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-navy text-cream">
-          <div className="lanna-watermark pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden />
+        <section className="plan-lanna-hero relative overflow-hidden bg-navy text-cream">
+          <div className="lanna-watermark pointer-events-none absolute inset-y-0 right-0 hidden w-[calc(50%-10rem)] opacity-[0.18] lg:block" aria-hidden />
           <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-7 pt-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-12">
             <div className="anim-rise max-w-3xl">
               <h1 className="font-lanna text-2xl leading-snug lg:text-5xl">
@@ -59,7 +59,7 @@ export default function Home() {
                 />
                 <button
                   type="submit"
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-gold text-navy lg:h-10 lg:w-10"
+                  className="lanna-plan-action flex h-8 w-8 items-center justify-center rounded-full bg-gold text-navy lg:h-10 lg:w-10"
                   aria-label={t("common.send")}
                 >
                   <i className="ti ti-arrow-right text-base" aria-hidden />
@@ -74,7 +74,7 @@ export default function Home() {
 
               <Link
                 href="/s/42"
-                className="mt-3 flex items-center justify-center gap-2 rounded-full border border-dashed border-gold/60 py-2 text-xs text-gold lg:max-w-2xl lg:py-2.5 lg:text-sm"
+                className="lanna-plan-action mt-3 flex items-center justify-center gap-2 rounded-full border border-dashed border-gold/60 py-2 text-xs text-gold lg:max-w-2xl lg:py-2.5 lg:text-sm"
               >
                 <i className="ti ti-qrcode text-base" aria-hidden />
                 {lang === "th"
@@ -83,8 +83,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="hidden min-h-[328px] flex-col overflow-hidden rounded-2xl border border-gold/30 bg-navy-600/60 p-5 shadow-xl lg:flex">
-              <div className="weave-strip h-1.5 rounded-full" />
+            <div className="plan-route-card hidden min-h-[328px] flex-col overflow-hidden rounded-2xl border border-gold/30 bg-navy-600/60 p-5 shadow-xl lg:flex">
               <div className="mt-5 flex items-start gap-3">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold text-navy">
                   <i className="ti ti-qrcode text-2xl" aria-hidden />
@@ -97,20 +96,20 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
-                <div className="rounded-xl bg-navy px-3 py-3">
+                <div className="plan-recommend-card rounded-xl bg-navy px-3 py-3">
                   <div className="text-2xl font-bold text-gold">15</div>
                   <div className="text-cream/70">
                     {lang === "th" ? "อำเภอ" : textLoc("districts", lang)}
                   </div>
                 </div>
-                <div className="rounded-xl bg-navy px-3 py-3">
+                <div className="plan-recommend-card rounded-xl bg-navy px-3 py-3">
                   <div className="text-2xl font-bold text-gold">{places.length}</div>
                   <div className="text-cream/70">
                     {lang === "th" ? "จุดแนะนำ" : textLoc("featured", lang)}
                   </div>
                 </div>
               </div>
-              <div className="mt-5 flex flex-1 flex-col rounded-xl border border-cream/10 bg-navy/55 p-4">
+              <div className="plan-recommend-card mt-5 flex flex-1 flex-col rounded-xl border border-cream/10 bg-navy/55 p-4">
                 <div className="flex items-center justify-between gap-3">
                   <div className="text-xs font-semibold text-cream">
                     {heroText("ตัวอย่างเส้นทาง AI", "AI journey preview")}
@@ -175,7 +174,7 @@ export default function Home() {
               <Link
                 key={c.key}
                 href={`/posts/${c.key}`}
-                className="hover-lift flex min-h-20 flex-col items-center justify-center gap-1.5 rounded-xl border border-line bg-white py-3 text-center hover:border-navy-300 lg:min-h-24"
+                className="plan-recommend-card hover-lift flex min-h-20 flex-col items-center justify-center gap-1.5 rounded-xl border border-line bg-white py-3 text-center hover:border-gold/60 lg:min-h-24"
               >
                 <i className={`ti ${c.icon} text-2xl text-navy`} aria-hidden />
                 <span className="px-1 text-[11px] leading-tight text-ink lg:text-xs">{t(c.labelKey)}</span>
@@ -214,7 +213,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-gold/25 bg-navy text-cream">
+      <footer className="plan-lanna-hero border-t border-gold/25 bg-navy text-cream">
         <div className="lanna-strip h-2 bg-navy" />
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
@@ -227,13 +226,13 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2 text-xs">
-            <Link href="/chat" className="rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
+            <Link href="/chat" className="lanna-plan-action rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
               {t("common.askAI")}
             </Link>
-            <Link href="/plan" className="rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
+            <Link href="/plan" className="lanna-plan-action rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
               {t("common.planRoute")}
             </Link>
-            <Link href="/map" className="rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
+            <Link href="/map" className="lanna-plan-action rounded-full border border-cream/15 px-3 py-1.5 text-cream/75 hover:border-gold hover:text-gold">
               {t("nav.map")}
             </Link>
           </div>
@@ -256,7 +255,7 @@ function QuickAction({ href, icon, label }: { href: string; icon: string; label:
   return (
     <Link
       href={href}
-      className="flex flex-col items-center gap-1 rounded-xl bg-navy-600 py-2.5 text-cream transition hover:bg-navy-300/40"
+      className="lanna-plan-action flex flex-col items-center gap-1 rounded-xl bg-navy-600 py-2.5 text-cream transition hover:bg-navy-300/40"
     >
       <i className={`ti ${icon} text-xl text-gold`} aria-hidden />
       <span className="text-[11px]">{label}</span>
@@ -292,7 +291,7 @@ function Chip({
   return (
     <button
       onClick={onClick}
-      className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-[12.5px] transition ${
+      className={`lanna-plan-action flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-[12.5px] transition ${
         active
           ? "border-navy bg-navy text-cream"
           : "border-line bg-white text-ink hover:border-navy-300"
