@@ -36,7 +36,7 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero */}
         <section className="plan-lanna-hero relative overflow-hidden bg-navy text-cream">
-          <div className="lanna-watermark pointer-events-none absolute inset-y-0 right-0 hidden w-[calc(50%-10rem)] opacity-[0.18] lg:block" aria-hidden />
+          <div className="lanna-watermark pointer-events-none absolute inset-y-0 right-0 hidden w-[calc(50%-40rem)] opacity-[0.18] lg:block" aria-hidden />
           <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-7 pt-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-12">
             <div className="anim-rise max-w-3xl">
               <h1 className="font-lanna text-2xl leading-snug lg:text-5xl">
